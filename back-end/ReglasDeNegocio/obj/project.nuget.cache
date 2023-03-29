@@ -1,8 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "H6d8bhZd9afxNbpMVAcc2FeYUjsRMZT3dPagnNQSc+Ty27G/vTdwA2zDiE5bDhZFglWdHRE7jVuJHDs7NEUW8g==",
+  "dgSpecHash": "N4NepMuYIQn16lrNHAiyZV4C8aSRsXSjr/0oo/wNIwW5CMpr7S/DWR0PeU/ZBq+blTR4893nZYaCyXdMXcSPPA==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\GitHub\\ModuloCliente-HotelCocoMilk\\back-end\\ReglasDeNegocio\\ReglasDeNegocio.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\ModuloCliente-HotelCocoMilk\\back-end\\ReglasDeNegocio\\ReglasDeNegocio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0-preview.2.23128.3\\microsoft.entityframeworkcore.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0-preview.2.23128.3\\microsoft.entityframeworkcore.abstractions.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.0-preview.2.23128.3\\microsoft.entityframeworkcore.analyzers.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.0-preview.2.23128.3\\microsoft.entityframeworkcore.relational.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0-preview.2.23128.3\\microsoft.extensions.caching.abstractions.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0-preview.2.23128.3\\microsoft.extensions.caching.memory.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0-preview.2.23128.3\\microsoft.extensions.configuration.abstractions.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0-preview.2.23128.3\\microsoft.extensions.dependencyinjection.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0-preview.2.23128.3\\microsoft.extensions.dependencyinjection.abstractions.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0-preview.2.23128.3\\microsoft.extensions.logging.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0-preview.2.23128.3\\microsoft.extensions.logging.abstractions.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.options\\8.0.0-preview.2.23128.3\\microsoft.extensions.options.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0-preview.2.23128.3\\microsoft.extensions.primitives.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\npgsql\\8.0.0-preview.2\\npgsql.8.0.0-preview.2.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.0-preview.2\\npgsql.entityframeworkcore.postgresql.8.0.0-preview.2.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
