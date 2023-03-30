@@ -1,0 +1,36 @@
+
+.hero__categories {
+	padding-bottom: 50px;
+	padding-left: 10%;
+	width: 80%;
+	
+}
+
+.hero__categories ul { /*----*/
+	padding-top: 30px;
+
+}
+
+.hero__categories ul li {  
+	list-style: none;
+     border: solid 1px #000;
+}
+
+.test{  
+     background-color: #0f1521;
+}
+
+.hero__categories ul li a {  
+	font-size: 16px;
+	color: #1c1c1c;
+	line-height: 39px;
+	display: block;
+}
+
+
+
+
+
+
+
+
