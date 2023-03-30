@@ -1,7 +1,6 @@
 ﻿using AccesoADatos.Context;
 using Microsoft.EntityFrameworkCore;
 using Entidades.Entities;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace AccesoADatos.Data
 {
@@ -15,6 +14,8 @@ namespace AccesoADatos.Data
                 return await _context.cliente.ToListAsync();
             }
         }
+
+        
 
         public async Task<List<Cliente>> GetAllUser()
         {

@@ -10,6 +10,8 @@ namespace AccesoADatos.Context
         }
 
         public virtual DbSet<Cliente> cliente { get; set; }
+        public virtual DbSet<Pagina> pagina { get; set; }
+        public virtual DbSet<Publicidad> publicidad { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
