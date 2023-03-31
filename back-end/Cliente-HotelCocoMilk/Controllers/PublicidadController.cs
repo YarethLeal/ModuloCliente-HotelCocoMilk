@@ -6,9 +6,18 @@ namespace Cliente_HotelCocoMilk.Controllers
 {
     public class PublicidadController : Controller
     {
-        public IActionResult Index()
+        public IConfiguration Configuration { get; }
+
+        public PublicidadController(IConfiguration configuration)
         {
-            return View();
+            Configuration = configuration;
+        }
+
+        [HttpGet]
+        [Route("mostrarImagenPublicidad")]
+        public async Task<List<Publicidad>> mostrarImagenPublicidad()
+        {
+            return await (new BusinessPublicidad().mostrarImagenPublicidad());
         }
     }
 }

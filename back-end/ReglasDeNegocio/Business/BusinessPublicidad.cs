@@ -5,5 +5,16 @@ namespace ReglasDeNegocio.Business
 {
     public class BusinessPublicidad
     {
+        private DataPublicidad dataPublicidad;
+
+        public BusinessPublicidad()
+        {
+            dataPublicidad = new DataPublicidad();
+        }
+
+        public async Task<List<Publicidad>> mostrarImagenPublicidad()
+        {
+            return await dataPublicidad.mostrarImagenPublicidad();
+        }
     }
 }
