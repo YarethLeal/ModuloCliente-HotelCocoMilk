@@ -19,12 +19,5 @@ namespace Cliente_HotelCocoMilk.Controllers
         {
             return await (new BusinessCliente().listarCliente());
         }
-
-        [HttpGet]
-        [Route("GetAllUser")]
-        public async Task<List<Cliente>> GetAllUser()
-        {
-            return await (new BusinessCliente().GetAllUser());
-        }
     }
 }

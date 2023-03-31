@@ -14,17 +14,10 @@ namespace Cliente_HotelCocoMilk.Controllers
         }
 
         [HttpGet]
-        [Route("mostrarDescripcion")]
-        public async Task<List<Pagina>> mostrarDescripcion()
+        [Route("mostrarPagina")]
+        public async Task<List<Pagina>> mostrarPagina(string tipoPagina)
         {
-            return await (new BusinessPagina().mostrarDescripcion());
-        }
-
-        [HttpGet]
-        [Route("mostrarImagen")]
-        public async Task<List<Pagina>> mostrarImagen()
-        {
-            return await (new BusinessPagina().mostrarImagen());
+            return await (new BusinessPagina().mostrarPagina(tipoPagina));
         }
     }
 }

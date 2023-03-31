@@ -19,10 +19,5 @@ namespace ReglasDeNegocio.Business
             return await dataCliente.listarCliente();
         }
 
-        public async Task<List<Cliente>> GetAllUser()
-        {
-            return await dataCliente.GetAllUser();
-        }
-
     }
 }
