@@ -1,36 +1,37 @@
-
 .hero__categories {
-	padding-bottom: 50px;
-	padding-left: 10%;
-	width: 80%;
-	
+	padding-bottom: 0.1rem; 
+	padding-left: 2rem;
+	width: 100%;
 }
 
 .hero__categories ul { /*----*/
-	padding-top: 30px;
-
+	box-shadow: inset -1px 0 0 rgba(221, 38, 38, 0.1);
 }
 
 .hero__categories ul li {  
 	list-style: none;
-     border: solid 1px #000;
-}
-
-.test{  
-     background-color: #0f1521;
 }
 
 .hero__categories ul li a {  
 	font-size: 16px;
 	color: #1c1c1c;
-	line-height: 39px;
+	line-height: 2.5rem; 
 	display: block;
 }
 
+.sidebar .nav-item .nav-link.active{  
+	background-color: hsl(220, 38%, 9%);
+}
+.sidebar .nav-item .nav-link.active{  
+	color: white;
+}
 
-
-
-
-
-
-
+.sidebar .nav-item .nav-link:hover{
+	color: rgb(9, 48, 244);
+}
+ 
+/* @media (max-width: 767.98px) {
+	.sidebar {
+	  top: 5rem;
+	}
+  } */

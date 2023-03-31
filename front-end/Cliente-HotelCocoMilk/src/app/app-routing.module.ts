@@ -1,11 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './paginas/home/home.component';
+import { AboutComponent } from './paginas/about/about.component';
+import { ReservationComponent } from './paginas/reservation/reservation.component';
+import { TariffComponent } from './paginas/tariff/tariff.component';
+import { MapComponent } from './paginas/map/map.component';
+import { ContactComponent } from './paginas/contact/contact.component';
+import { FacilidadesComponent } from './paginas/facilidades/facilidades.component';
 
 
 const routes: Routes = [
   {path:'', component: HomeComponent },
-  {path:'Home', component: HomeComponent }
+  {path:'home', component: HomeComponent },
+  {path:'about', component: AboutComponent },
+  {path:'reservation', component: ReservationComponent },
+  {path:'tariff', component: TariffComponent },
+  {path:'map', component: MapComponent },
+  {path:'contact', component: ContactComponent },
+  {path:'facilities', component: FacilidadesComponent }
+
 ];
 
 @NgModule({
