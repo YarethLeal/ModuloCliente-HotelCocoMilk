@@ -1,34 +1,31 @@
-
-<section class="hero">
-    <div class="row">
-            <div class="hero__categories">
-                <ul>
-                  <li class="test">
-                     <a class="nav-link " href="index.html" style="color: white">Home</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="about.html">Sobre Nosotros</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="room.html">Facilidades</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="gallery.html">Como llegar</a>
-                  </li>
-                  <li class="nav-item active">
-                     <a class="nav-link" href="blog.html">Tarifa</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="contact.html">Reservaciones</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="contact.html">Contactenos</a>
-                  </li>
-                </ul>
-            </div>
-
-    </div>
+<section class="hero"> 
+   <div class="row">
+      <nav id="sidebarMenu" class="d-md-block bg-light sidebar collapse">
+         <div class="hero__categories sidebar-sticky">
+            <ul class="nav flex-column">
+               <li class="nav-item active">
+                  <a class="nav-link" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">Sobre Nosotros</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" routerLink="/facilities" routerLinkActive="active"  ariaCurrentWhenActive="page">Facilidades</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" routerLink="/map" routerLinkActive="active"  ariaCurrentWhenActive="page">Como llegar</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" routerLink="/tariff" routerLinkActive="active"  ariaCurrentWhenActive="page">Tarifa</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" routerLink="/reservation" routerLinkActive="active"  ariaCurrentWhenActive="page">Reservaciones</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" routerLink="/contact" routerLinkActive="active"  ariaCurrentWhenActive="page">Contactenos</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+   </div>
 </section>
-
-
-<router-outlet></router-outlet>
