@@ -13,7 +13,7 @@ namespace Cliente_HotelCocoMilk.Controllers
             Configuration = configuration;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("mostrarPagina")]
         public async Task<List<Pagina>> mostrarPagina(string tipoPagina)
         {
