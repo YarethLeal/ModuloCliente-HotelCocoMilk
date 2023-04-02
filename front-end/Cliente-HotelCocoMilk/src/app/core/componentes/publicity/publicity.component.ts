@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Publicidad } from '../../modelos/publicidad.model';
 import { CommonModule } from '@angular/common';
-// import { PublicidadService } from '../../servicios/publicidad.service';
+import { PublicidadService } from '../../servicios/publicidad.service';
 
 // var slides: Publicidad[] = [];
 @Component({
@@ -13,16 +13,21 @@ import { CommonModule } from '@angular/common';
 export class PublicityComponent implements OnInit {
   @Input() slides: Publicidad[];
   currentSlide = 0;
-  constructor(/*private publicidadService: PublicidadService*/) {
-    this.slides = [{ ID: 1, Imagen: "assets/images/cat-1.jpg", Destino: "https://coca-colafemsa.com/producto/del-valle/" },
-    { ID: 2, Imagen: "assets/images/cat-2.jpg", Destino: "https://salsa-lizano.com/" }];
-    console.log(this.slides);
-
-  }
+  constructor(private publicidadService: PublicidadService) {
+    this.slides=[];
+      }
   ngOnInit(): void {
+    this.getPublicidad();
     this.currentSlide = 0;
     this.loop(this.slides.length);
   }
+
+  getPublicidad() {
+    return this.publicidadService.getPublicidad().subscribe((data: Publicidad[]) => {
+      this.slides = data;
+      console.log(this.slides);
+    })
+  };
 
   nextComponente(value:number) {
     const next = this.currentSlide + 1;

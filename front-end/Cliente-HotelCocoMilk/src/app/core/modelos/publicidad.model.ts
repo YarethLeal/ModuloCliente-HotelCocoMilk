@@ -1,7 +1,7 @@
 export interface Publicidad {
-  ID: number;
-  Imagen: string;
-  Destino: string;
+  id_publicidad: number;
+  imagen: string;
+  destino: string;
 
 }
 

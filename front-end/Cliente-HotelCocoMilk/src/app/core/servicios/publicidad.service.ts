@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Publicidad } from '../modelos/publicidad.model';
 import { Observable, throwError, retry, catchError } from "rxjs";
-
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PublicidadService {
-  urlAPI: string = "https://localhost:7071/";
+  urlAPI: string = environment.urlAPI;
   constructor(private http: HttpClient) { }
   //respuesta tipo string
   httpOptions1 = {
