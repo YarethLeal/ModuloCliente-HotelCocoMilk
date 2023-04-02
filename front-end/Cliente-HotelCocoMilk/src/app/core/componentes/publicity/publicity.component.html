@@ -1,7 +1,7 @@
 <div class="blog_box">
   <div class="blog_img">
     <div class="container bg-light" *ngFor="let slide of slides; let i = index">
-      <a id="link-box" href="assets/images/{{slide.destino}}" target="_blank">
+      <a id="link-box" [href]="slide.destino" target="_blank">
         <figure>
           <img *ngIf="i === currentSlide" src="assets/images/{{slide.imagen}}" class="slide" />
         </figure>
