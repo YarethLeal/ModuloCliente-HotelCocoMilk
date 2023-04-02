@@ -10,7 +10,7 @@ import { HomeComponent } from './paginas/home/home.component';
 import { PublicityComponent } from './core/componentes/publicity/publicity.component';
 import { AboutComponent } from './paginas/about/about.component';
 import { ContactComponent } from './paginas/contact/contact.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { MapComponent } from './paginas/map/map.component';
 import { TariffComponent } from './paginas/tariff/tariff.component';
 import { ReservationComponent } from './paginas/reservation/reservation.component';
@@ -33,6 +33,7 @@ import { FacilidadesComponent } from './paginas/facilidades/facilidades.componen
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

@@ -12,15 +12,9 @@ namespace ReglasDeNegocio.Business
             dataPagina = new DataPagina();
         }
 
-        public async Task<List<Pagina>> mostrarDescripcion()
+        public async Task<List<Pagina>> mostrarPagina(string tipoPagina)
         {
-            return await dataPagina.mostrarDescripcion();
+            return await dataPagina.mostrarPagina(tipoPagina);
         }
-
-        public async Task<List<Pagina>> mostrarImagen()
-        {
-            return await dataPagina.mostrarImagen();
-        }
-
     }
 }
