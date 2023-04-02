@@ -6,9 +6,18 @@ namespace Cliente_HotelCocoMilk.Controllers
 {
     public class TipoHabitacionController : Controller
     {
-        public IActionResult Index()
+        public IConfiguration Configuration { get; }
+
+        public TipoHabitacionController(IConfiguration configuration)
         {
-            return View();
+            Configuration = configuration;
+        }
+
+        [HttpPost]
+        [Route("listarTipoHabitacion")]
+        public async Task<List<TipoHabitacion>> listarTipoHabitacion()
+        {
+            return await (new BusinessTipoHabitacion().listarTipoHabitacion());
         }
     }
 }

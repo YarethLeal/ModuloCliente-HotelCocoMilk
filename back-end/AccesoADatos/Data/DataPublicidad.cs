@@ -15,11 +15,8 @@ namespace AccesoADatos.Data
             }
         }
 
-
         public async Task<List<Publicidad>> GetAllPublicity()
         {
-            //var db = dbConnection();
-
             using (var _context = new DBContext())
             {
 

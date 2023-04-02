@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0bMWFioAECD8ZFyAu4ctull3bKT5GeRKY/YsEfL+ServGOTfGFHSYV6KPjnjsywNm0nXZCEnAf8VqUmZJ2aGpw==",
+  "dgSpecHash": "N4NepMuYIQn16lrNHAiyZV4C8aSRsXSjr/0oo/wNIwW5CMpr7S/DWR0PeU/ZBq+blTR4893nZYaCyXdMXcSPPA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\REPOSITORIOS\\ModuloCliente-HotelCocoMilk\\back-end\\ReglasDeNegocio\\ReglasDeNegocio.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\ModuloCliente-HotelCocoMilk\\back-end\\ReglasDeNegocio\\ReglasDeNegocio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0-preview.2.23128.3\\microsoft.entityframeworkcore.8.0.0-preview.2.23128.3.nupkg.sha512",

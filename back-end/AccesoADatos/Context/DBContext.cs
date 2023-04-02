@@ -13,6 +13,8 @@ namespace AccesoADatos.Context
         public virtual DbSet<Pagina> pagina { get; set; }
         public virtual DbSet<TipoPagina> tipo_pagina { get; set; }
         public virtual DbSet<Publicidad> publicidad { get; set; }
+        public virtual DbSet<Habitacion> habitacion { get; set; }
+        public virtual DbSet<TipoHabitacion> tipo_habitacion { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
