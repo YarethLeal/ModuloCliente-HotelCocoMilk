@@ -19,5 +19,19 @@ namespace Cliente_HotelCocoMilk.Controllers
         {
             return await (new BusinessTipoHabitacion().listarTipoHabitacion());
         }
+
+        [HttpPost]
+        [Route("obtenerTipoDeCambioXML")]
+        public async Task<string> obtenerTipoDeCambioXML()
+        {
+            return await (new BusinessTipoHabitacion().obtenerTipoDeCambioXML());
+        }
+
+        /*[HttpPost]
+        [Route("obtenerTipoDeCambio")]
+        public Task<ArrayOfXElement> obtenerTipoDeCambio()
+        {
+            return (new BusinessTipoHabitacion().obtenerTipoDeCambio());
+        }*/
     }
 }
