@@ -19,5 +19,12 @@ namespace Cliente_HotelCocoMilk.Controllers
         {
             return await (new BusinessPublicidad().mostrarImagenPublicidad());
         }
+
+        [HttpGet]
+        [Route("GetAllPublicity")]
+        public async Task<List<Publicidad>> GetAllPublicity()
+        {
+            return await (new BusinessPublicidad().GetAllPublicity());
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace Entidades.Entities
         public int id_publicidad { get; set; }
         public string imagen { get; set; } //byte[]
         public string destino { get; set; }
-        public bool eliminado { get; set; }
+        //public bool eliminado { get; set; }
     }
 
 }

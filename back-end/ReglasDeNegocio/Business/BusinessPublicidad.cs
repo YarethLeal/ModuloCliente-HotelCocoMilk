@@ -16,5 +16,11 @@ namespace ReglasDeNegocio.Business
         {
             return await dataPublicidad.mostrarImagenPublicidad();
         }
+
+        public async Task<List<Publicidad>> GetAllPublicity()
+        {
+            return await dataPublicidad.GetAllPublicity();
+        }
+
     }
 }
