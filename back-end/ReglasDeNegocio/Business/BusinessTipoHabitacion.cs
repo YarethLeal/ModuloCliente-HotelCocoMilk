@@ -17,5 +17,15 @@ namespace ReglasDeNegocio.Business
             return await dataTipoHabitacion.listarTipoHabitacion();
         }
 
+        public async Task<string> obtenerTipoDeCambioXML()
+        {
+            return await dataTipoHabitacion.obtenerTipoDeCambioXML();
+        }
+
+        /*public async Task<ArrayOfXElement> obtenerTipoDeCambio()
+        {
+            return await dataTipoHabitacion.obtenerTipoDeCambio();
+        }*/
+
     }
 }

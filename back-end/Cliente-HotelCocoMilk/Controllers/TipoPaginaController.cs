@@ -10,5 +10,8 @@ namespace Cliente_HotelCocoMilk.Controllers
         {
             return View();
         }
+
+       
+
     }
 }
