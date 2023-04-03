@@ -31,6 +31,7 @@
 .about_img {
     /* margin-right: 40px; */
     overflow: hidden;
+    margin-left: 20px;
 }
 
 .about_img figure {
