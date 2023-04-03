@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hKJVPQhu2CHDrPpCbeUfS91n9ZI/WZylL5/Mkj4SC7pKy+ZXoWX94SyniKq5vjwtgC90aDRo3pKIJmq+YboZig==",
+  "dgSpecHash": "ZsdZomzmXRXbMe+W4ibR3P6nTFHfsJ5bCYLYlm0lh8A+zRhVZpC46uwycQ4PFM2tS1eKzt7b0iF87iiQ7LjRhA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\ModuloCliente-HotelCocoMilk\\back-end\\AccesoADatos\\AccesoADatos.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\REPOSITORIOS\\ModuloCliente-HotelCocoMilk\\back-end\\AccesoADatos\\AccesoADatos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\google.protobuf\\3.21.5\\google.protobuf.3.21.5.nupkg.sha512",

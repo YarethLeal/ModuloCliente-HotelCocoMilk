@@ -1,3 +1,38 @@
 <div class="title">
     <h2 style="color: white; padding-top: 5px;"> Tarifas</h2>
  </div>
+
+ <div class="col-md-12" style="margin-top: 5px;">
+   <div class="row">
+      <div class="col-md-9" style="text-align: right;">
+         <h5>Cambio de moneda: </h5>
+      </div>
+      <div class="col-md-3">
+         <select [(ngModel)]="tipoMoneda" (ngModelChange)='obtenerTipoDeCambioXML()'>
+            <option value=0>Colones</option>
+            <option  value=1>Dolares</option>
+          </select>
+      </div>
+   </div>
+ </div>
+
+ <div class="about" *ngFor="let tipoHabitacion of dataTipoHabitacion">
+    <div class="row">
+       <div class="col-md-5">
+          <div class="about_img">
+             <figure><img [src]="'assets/images/' + tipoHabitacion.imagen" alt="#" width="600" height="300" /></figure>
+          </div>
+       </div>
+       <div class="col-md-6">
+ 
+          <div class="titlepage" >
+             <h3 class="margin_0 informacion">{{tipoHabitacion.tipo}}</h3>
+             <br>
+             <p class="margin_0 informacion">{{tipoHabitacion.informacion}}</p>
+             <p class="margin_0 informacion">{{'Tarifa: '+ simbolo +' '+(tipoHabitacion.tarifa).toFixed(2)}}</p>
+          </div>
+       </div>
+    </div>
+ 
+ </div>
+
