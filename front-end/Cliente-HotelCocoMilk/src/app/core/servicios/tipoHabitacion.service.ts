@@ -34,21 +34,12 @@ export class TipoHabitacionService {
     withCredentials: false
   };
 
-  httpOptions3 = {
-    headers: new HttpHeaders({
-      "mimeType": "multipart/form-data",
-      "Access-Control-Allow-Origin": "*"
-    }),
-    withCredentials: false,
-    responseType: 'document'
-  };
-
   listarTipoHabitacion(): Observable<TipoHabitacion[]> {
     return this.http.post<TipoHabitacion[]>(this.urlAPI + 'listarTipoHabitacion', this.httpOptions2);
   }
 
   obtenerTipoDeCambioXML(): Observable<any> {
-    return this.http.post(this.urlAPI + 'obtenerTipoDeCambioXML', this.httpOptions3);
+    return this.http.post(this.urlAPI + 'obtenerTipoDeCambioXML', this.httpOptions1);
   }
 
 }

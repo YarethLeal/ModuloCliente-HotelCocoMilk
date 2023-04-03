@@ -8,9 +8,9 @@
          <h5>Cambio de moneda: </h5>
       </div>
       <div class="col-md-3">
-         <select id="combo">
-            <option value="colon">Colones</option>
-            <option value="dolar">Dolares</option>
+         <select [(ngModel)]="tipoMoneda" (ngModelChange)='obtenerTipoDeCambioXML()'>
+            <option value=0>Colones</option>
+            <option  value=1>Dolares</option>
           </select>
       </div>
    </div>
@@ -26,9 +26,10 @@
        <div class="col-md-6">
  
           <div class="titlepage" >
-             <p class="margin_0 informacion">{{tipoHabitacion.tipo}}</p>
+             <h3 class="margin_0 informacion">{{tipoHabitacion.tipo}}</h3>
+             <br>
              <p class="margin_0 informacion">{{tipoHabitacion.informacion}}</p>
-             <p class="margin_0 informacion">{{tipoHabitacion.tarifa}}</p>
+             <p class="margin_0 informacion">{{'Tarifa: '+ simbolo +' '+(tipoHabitacion.tarifa).toFixed(2)}}</p>
           </div>
        </div>
     </div>

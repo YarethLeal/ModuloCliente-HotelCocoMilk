@@ -15,6 +15,7 @@ import { MapComponent } from './paginas/map/map.component';
 import { TariffComponent } from './paginas/tariff/tariff.component';
 import { ReservationComponent } from './paginas/reservation/reservation.component';
 import { FacilidadesComponent } from './paginas/facilidades/facilidades.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FacilidadesComponent } from './paginas/facilidades/facilidades.componen
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
