@@ -11,20 +11,26 @@ let dataPaginas: Pagina[];
 })
 export class AboutComponent {
   public descripcion: string;
+  public galeria: Array<string>;
+  public imagenPrincipal: string;
   constructor(private paginaService: PaginaService) {
-    //this.descripcion = "Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Cum quam euismod sem, semper ut potenti pellentesque quisque. In eget sapien sed, sit duis vestibulum ultricies, placerat morbi amet vel, nullam in in lorem vel. In molestie elit dui dictum, praesent nascetur pulvinar sed, in dolor pede in aliquam, risus nec error quis pharetra.";
     this.descripcion = "";
-    dataPaginas =[];
+    this.imagenPrincipal = "";
+    this.galeria = [];
+    dataPaginas = [];
   }
   ngOnInit(): void {
-    this.mostrarPagina("Home");
-    //this.mostrarPagina("Sobre Nosotros");
+    this.mostrarPagina("Sobre Nosotros");
   }
-   mostrarPagina(buscar: string) {
-      this.paginaService.mostrarPagina({ tipoPagina: buscar }).subscribe((data: Pagina[]) => {
-        dataPaginas = data;
-        this.descripcion=data[0].descripcion;
-        //this.imagen=data[0].imagen;
-      });
+  mostrarPagina(buscar: string) {
+    this.paginaService.mostrarPagina({ tipoPagina: buscar }).subscribe((data: Pagina[]) => {
+      dataPaginas = data;
+      this.descripcion = data[0].descripcion;
+      this.galeria=data[0].imagen.split(",");
+      this.imagenPrincipal = this.galeria[0];
+    });
+  }
+  public open(imagen:string) {
+    this.imagenPrincipal = imagen;
   }
 }

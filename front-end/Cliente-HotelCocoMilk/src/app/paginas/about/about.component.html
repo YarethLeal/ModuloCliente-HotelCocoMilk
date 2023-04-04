@@ -1,8 +1,23 @@
 <div class="title">
     <h2 style="color: white; padding-top: 5px;"> Sobre Nosotros</h2>
 </div>
-<div class="col-md-10">
+<div class="row col-md-10 ml-2 mt-3">
     <section>
         <p class="descripcion">{{this.descripcion}}</p>
     </section>
+</div>
+<div class="row ml-0 mr-2">
+    <div class="col-md-4">
+        <div class="about_img">
+            <!-- <figure><img [src]="'assets/images/' + this.imagen" alt="#" /></figure> -->
+            <figure><img src="assets/images/{{this.imagenPrincipal}}" alt="#" /></figure>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="row row-cols-md-3">
+            <div class="col" *ngFor="let image of galeria; let i = index">
+                <figure class="galeria" (click)="open(image)"><img [src]="'assets/images/'+image" alt="#" /></figure>
+            </div>
+        </div>
+    </div>
 </div>
