@@ -29,6 +29,6 @@ export class PublicidadService {
   };
 
   getPublicidad(): Observable<Publicidad[]> {
-    return this.http.get<Publicidad[]>(this.urlAPI + "GetAllPublicity", this.httpOptions2);
+    return this.http.get<Publicidad[]>(this.urlAPI + "mostrarImagenPublicidad", this.httpOptions2);
   }
 }

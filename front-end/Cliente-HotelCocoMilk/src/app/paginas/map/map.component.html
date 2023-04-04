@@ -1,3 +1,17 @@
 <div class="title">
-    <h2 style="color: white; padding-top: 5px;"> Como llegar</h2>
+    <h2 style="color: white; padding-top: 5px;">¿Cómo llegar?</h2>
  </div>
+ <div class="row col-md-10 ml-2 mt-3">
+    <section>
+        <p class="descripcion">{{this.descripcion}}</p>
+    </section>
+</div>
+<div class="row"> <!-- Crea columnas como filas -->
+    <div class="col-md-1"></div> <!-- Columna izquierda -->
+    <div class="col-md-8"> <!-- Columna central -->
+        <div class="map-responsive">
+            <iframe src="https://maps.google.com/maps?q=Costa Rica, Playa Tamarindo&t=&z=10&ie=UTF8&iwloc=&output=embed" width="600" height="400" [align]="1" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+        </div>
+    </div> 
+    <div class="col-md-1"></div> <!-- Columna derecha -->
+</div> 
