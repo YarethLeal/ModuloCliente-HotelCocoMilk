@@ -17,7 +17,7 @@ namespace Entidades.Entities
 
         public string descripcion { get; set; }
 
-        public string imagen { get; set; }
+        public string? imagen { get; set; }
 
     }
 }
