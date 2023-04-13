@@ -7,6 +7,6 @@ namespace AccesoADatos.Data
 {
     public class DataHabitacion
     {
-        
+       
     }
 }
