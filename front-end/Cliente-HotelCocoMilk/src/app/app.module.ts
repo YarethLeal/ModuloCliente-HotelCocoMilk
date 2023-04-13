@@ -16,6 +16,7 @@ import { TariffComponent } from './paginas/tariff/tariff.component';
 import { ReservationComponent } from './paginas/reservation/reservation.component';
 import { FacilidadesComponent } from './paginas/facilidades/facilidades.component';
 import { FormsModule } from '@angular/forms';
+import { FormReservationComponent } from './paginas/form-reservation/form-reservation.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     MapComponent,
     TariffComponent,
     ReservationComponent,
-    FacilidadesComponent
+    FacilidadesComponent,
+    FormReservationComponent
   ],
   imports: [
     BrowserModule,
