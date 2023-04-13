@@ -7,6 +7,7 @@ import { TariffComponent } from './paginas/tariff/tariff.component';
 import { MapComponent } from './paginas/map/map.component';
 import { ContactComponent } from './paginas/contact/contact.component';
 import { FacilidadesComponent } from './paginas/facilidades/facilidades.component';
+import { FormReservationComponent } from './paginas/form-reservation/form-reservation.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,9 @@ const routes: Routes = [
   {path:'tariff', component: TariffComponent },
   {path:'map', component: MapComponent },
   {path:'contact', component: ContactComponent },
-  {path:'facilities', component: FacilidadesComponent }
+  {path:'facilities', component: FacilidadesComponent },
+  {path:'formreservation', component: FormReservationComponent }
+
 
 ];
 
