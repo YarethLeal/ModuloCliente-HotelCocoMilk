@@ -1,3 +1,45 @@
 <div class="title">
     <h2 style="color: white; padding-top: 5px;"> Reservación</h2>
  </div>
+
+ <div class="row">
+  <div class="col-md-6 combobox">
+    <div class="row"> 
+      <div class="col-md-12 combobox-item">
+        <label for="start" style="margin-right: 20px;">Fecha de llegada:</label>
+      </div>
+      <div class="col-md-12 combobox-item">
+        <input type="date" id="start" [(ngModel)]="fechaInicio" > 
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 combobox">
+    <div class="row"> 
+      <div class="col-md-12 ">
+        <label for="end">Fecha de salida:</label>
+      </div>
+      <div class="col-md-12 ">
+        <input type="date" id="end" [(ngModel)]="fechaFinal" min="{{fechaInicio}}">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 content">
+    <select [(ngModel)]="tipoSeleccionado">
+      <option disabled selected hidden value="">Tipo de Habitación</option>
+      <option *ngFor="let tipoHabitacion of dataTipoHabitacion">{{tipoHabitacion.tipo}}</option>
+  </select>
+  </div>
+  <div class="col-md-12 content">
+    <button class="read_more" type="button" (click)="listarHabitacionReserva(fechaInicio,fechaFinal,tipoSeleccionado)">Aceptar</button>
+  </div>
+ </div>
+
+ 
+
+ 
+
+ 
+
+
+
+  
