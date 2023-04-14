@@ -4,8 +4,10 @@
     "\\AccesoADatos",
     "\\AccesoADatos\\Data",
     "\\Cliente-HotelCocoMilk",
-    "\\Cliente-HotelCocoMilk\\Controllers"
+    "\\Cliente-HotelCocoMilk\\Controllers",
+    "\\Entidades",
+    "\\Entidades\\Entities"
   ],
-  "SelectedNode": "\\Cliente-HotelCocoMilk\\Controllers\\PublicidadController.cs",
+  "SelectedNode": "\\Entidades\\Entities\\Reserva.cs",
   "PreviewInSolutionExplorer": false
 }

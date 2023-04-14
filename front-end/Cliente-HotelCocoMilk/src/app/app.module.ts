@@ -17,6 +17,8 @@ import { ReservationComponent } from './paginas/reservation/reservation.componen
 import { FacilidadesComponent } from './paginas/facilidades/facilidades.component';
 import { FormsModule } from '@angular/forms';
 import { FormReservationComponent } from './paginas/form-reservation/form-reservation.component';
+import { CommonModule } from '@angular/common';
+import { DatePipe } from '@angular/common'; 
 
 @NgModule({
   declarations: [
@@ -38,9 +40,10 @@ import { FormReservationComponent } from './paginas/form-reservation/form-reserv
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule 
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
