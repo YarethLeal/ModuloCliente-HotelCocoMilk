@@ -6,7 +6,6 @@ namespace ReglasDeNegocio.Business
 {
     public class BusinessCliente
     {
-
         private DataCliente dataCliente;
 
         public BusinessCliente()
@@ -18,6 +17,5 @@ namespace ReglasDeNegocio.Business
         {
             return await dataCliente.listarCliente();
         }
-
     }
 }

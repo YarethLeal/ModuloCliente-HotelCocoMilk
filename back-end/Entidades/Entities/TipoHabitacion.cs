@@ -11,4 +11,5 @@ namespace Entidades.Entities
         public string? imagen { get; set; }
         public int? tarifa { get; set; }
     }
+
 }

@@ -6,9 +6,19 @@ namespace Cliente_HotelCocoMilk.Controllers
 {
     public class ReservaController : Controller
     {
-        public IActionResult Index()
+        public IConfiguration Configuration { get; }
+
+        public ReservaController(IConfiguration configuration)
         {
-            return View();
+            Configuration = configuration;
         }
+
+        [HttpPost]
+        [Route("listarHabitacionReserva")]
+        public async Task<ReservacionDisponible> listarHabitacionReserva(DateTime fechaLlegada, DateTime fechaSalida, string tipoHabitacion)
+        {
+            return await (new BusinessReserva().listarHabitacionReserva(fechaLlegada, fechaSalida, tipoHabitacion));
+        }
+
     }
 }
