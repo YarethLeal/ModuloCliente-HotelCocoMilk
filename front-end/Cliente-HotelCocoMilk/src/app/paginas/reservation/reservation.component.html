@@ -1,3 +1,17 @@
 <div class="title">
     <h2 style="color: white; padding-top: 5px;"> Reservación</h2>
  </div>
+
+ <label for="start">Fecha de llegada:</label>
+ <input type="date" id="start">
+
+ <label for="end">Fecha de salida:</label>
+ <input type="date" id="end">
+
+ <select>
+    <option *ngFor="let tipoHabitacion of dataTipoHabitacion">{{tipoHabitacion.tipo}}</option>
+</select>
+
+
+
+  <button class="read_more" type="button">Read More</button>
