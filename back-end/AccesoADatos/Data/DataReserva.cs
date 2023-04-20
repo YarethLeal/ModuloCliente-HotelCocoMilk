@@ -1,5 +1,6 @@
 ﻿using AccesoADatos.Context;
 using Entidades.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace AccesoADatos.Data
 {
@@ -54,5 +55,27 @@ namespace AccesoADatos.Data
 
             }
         }
-    }
+
+        public async Task<String> registarReserva(Reserva reserva)
+        {
+            try
+            {
+                using (var _context = new DBContext())
+                {
+                    _context.reserva.Add(reserva);
+                    await _context.SaveChangesAsync();
+
+                }
+            }
+            catch (DbUpdateException /* ex */)
+            {
+
+                return "No se pueden guardar los cambios. " +
+                         "Vuelve a intentarlo y, si el problema persiste, " +
+                         "consulte con el administrador del sistema.";
+            }
+            return "Reserva Registrada";
+
+        }
+    }//class
 }
