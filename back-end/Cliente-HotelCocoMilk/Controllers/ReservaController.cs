@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Entidades.Entities;
 using ReglasDeNegocio.Business;
+using AccesoADatos.Data;
 
 namespace Cliente_HotelCocoMilk.Controllers
 {
@@ -20,5 +21,11 @@ namespace Cliente_HotelCocoMilk.Controllers
             return await (new BusinessReserva().listarHabitacionReserva(fechaLlegada, fechaSalida, tipoHabitacion));
         }
 
-    }
+        [HttpPost]
+        [Route("registrarReserva")]
+        public async Task<String> registarReserva(Reserva reserva)
+        {
+            return await (new BusinessReserva().registarReserva(reserva));
+        }
+     }
 }

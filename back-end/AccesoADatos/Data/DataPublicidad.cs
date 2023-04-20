@@ -14,17 +14,6 @@ namespace AccesoADatos.Data
 
             }
         }
-
-        public async Task<List<Publicidad>> GetAllPublicity()
-        {
-            using (var _context = new DBContext())
-            {
-
-                FormattableString sql = $"SELECT cliente.id_publicidad, imagen, destino FROM hotel.cliente";
-
-                return await _context.publicidad.FromSqlRaw(@"SELECT id_publicidad, imagen, destino FROM hotel.publicidad").ToListAsync();
-
-            }
-        }
+      
     }
 }

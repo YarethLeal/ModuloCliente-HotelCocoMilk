@@ -16,5 +16,10 @@ namespace ReglasDeNegocio.Business
         {
             return await dataReserva.listarHabitacionReserva(fechaLlegada, fechaSalida, tipoHabitacion);
         }
+
+        public async Task<String> registarReserva(Reserva reserva)
+        {
+            return await dataReserva.registarReserva(reserva);
+        }
     }
 }

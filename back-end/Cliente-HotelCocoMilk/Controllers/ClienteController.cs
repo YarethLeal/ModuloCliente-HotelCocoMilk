@@ -19,5 +19,26 @@ namespace Cliente_HotelCocoMilk.Controllers
         {
             return await (new BusinessCliente().listarCliente());
         }
+
+        [HttpPost]
+        [Route("registarCliente")]
+        public async Task<String> registarCliente(Cliente cliente)
+        {
+            return await (new BusinessCliente().registarCliente(cliente));
+        }
+
+        [HttpPost]
+        [Route("buscarCliente")]
+        public async Task<List<Cliente>> buscarCliente(string nombre, string apellido)
+        {
+            return await (new BusinessCliente().buscarCliente(nombre, apellido));
+        }
+
+        [HttpPost]
+        [Route("buscarClienteId")]
+        public async Task<List<Cliente>> buscarClienteId(string id)
+        {
+            return await (new BusinessCliente().buscarClienteId(id));
+        }
     }
 }
