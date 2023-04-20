@@ -16,6 +16,7 @@ export class ReservationComponent implements OnInit{
   public fechaInicio: string | null;
   public fechaFinal: string | null;
   public tipoSeleccionado: string;
+  reservate: boolean= false;
 
   constructor (private tipoHabitacionService: TipoHabitacionService, private reservaService: ReservaService, private datePipe: DatePipe) {
     this.fechaInicio= this.datePipe.transform(new Date(), 'yyyy-MM-d');
@@ -34,17 +35,21 @@ export class ReservationComponent implements OnInit{
     this.tipoHabitacionService.listarTipoHabitacion().subscribe((data: TipoHabitacion[]) => {
       this.dataTipoHabitacion = data;
     });
-  } 
+  }
 
-  listarHabitacionReserva(fechaLlegadaTemp: any,fechaSalidaTemp: any,tipoHabitacionTemp: any){  
+  listarHabitacionReserva(fechaLlegadaTemp: any,fechaSalidaTemp: any,tipoHabitacionTemp: any){
     const fechaInicialforma= this.datePipe.transform(fechaLlegadaTemp, 'dd/MM/yyyy');
     const fechaFinalforma= this.datePipe.transform(fechaSalidaTemp, 'dd/MM/yyyy');
     if(tipoHabitacionTemp!=""){
     this.reservaService.listarHabitacionReserva({fechaLlegada: fechaInicialforma, fechaSalida: fechaFinalforma,tipoHabitacion: tipoHabitacionTemp}).subscribe((data: Reserva) => {
       this.dataHabitacionReserva = data;
       console.log(data);
+      this.verReserva()
     });
   }
   }
 
+  verReserva() {
+    return (this.reservate = true);
+  }
 }

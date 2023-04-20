@@ -1,7 +1,7 @@
 .title{
     background-color: #0f1521;
     text-align: center;
-    padding-bottom: 0.1rem; 
+    padding-bottom: 0.1rem;
     width: 100%;
 }
 
@@ -11,14 +11,19 @@
 }
 
 .combobox-item {
-    text-align: right;
+    text-align: left;
 }
 
 .content {
-    text-align: center; 
     margin-bottom: 2%;
+    margin-top: 4%;
+    margin-left: 0%;
+    text-align: left;
 }
-
+.row1{
+  margin: 0%;
+  display: inline-flex;
+}
 .read_more {
     font-size: 17px;
     background-color: #0f1521;
@@ -39,6 +44,76 @@
     transition: ease-in all 0.5s;
 }
 
+.main_form .formulario {
+  border: #fff solid 1px;
+  padding: 0 15px;
+  margin-bottom: 25px;
+  width: 100%;
+  height: 58px;
+  background: #fff;
+  color: gray;
+  font-size: 18px;
+  font-weight: normal;
+  box-shadow: 2px 0px 6px rgba(16, 11, 80, 0.2);
+}
+
+#request *::placeholder {
+  color: gray;
+  opacity: 1;
+}
+
+.about {
+  background-color: #fff;
+  padding-top: 25px;
+  margin-right: 2rem;
+}
+
+.about .titlepage {
+  text-align: justify;
+  padding-bottom: 0;
+  width: 100%;
+}
+
+.about .titlepage h2 {
+  margin-bottom: 35px;
+}
+
+.about .titlepage p {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 28px;
+  padding-bottom: 20px;
+}
+
+.about_img {
+  /* margin-right: 40px; */
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.about_img figure {
+  margin: 0;
+}
+
+.about_img figure img {
+  width: 100%;
+  transition: all .5s;
+}
+
+.about_img figure img:hover {
+  transform: scale(1.2);
+}
+
+.reservacion {
+  margin-left: 1.5rem;
+  margin-right: 2rem;
+  text-align: center;
+}
+
+.btns {
+display: inline-flex;
+}
+
 @media (max-width:700px) {
     .combobox{
         text-align: center;
@@ -46,5 +121,12 @@
     .combobox-item{
         text-align: center;
     }
-    
+    .content{
+      margin-top: 2%;
+      text-align: center;
+    }
+    .btns {
+      margin-left: 2rem;
+    }
+
 }
