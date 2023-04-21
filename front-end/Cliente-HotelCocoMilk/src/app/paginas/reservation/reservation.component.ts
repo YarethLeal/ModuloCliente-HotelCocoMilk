@@ -5,7 +5,8 @@ import { Reserva } from 'src/app/core/modelos/reserva.model';
 import { TipoHabitacion } from 'src/app/core/modelos/tipoHabitacion.model';
 import { ReservaService } from 'src/app/core/servicios/reserva.service';
 import { TipoHabitacionService } from 'src/app/core/servicios/tipoHabitacion.service';
-
+import { ModalReservacionComponent } from 'src/app/core/componentes/modal-reservacion/modal-reservacion.component';
+declare let $: any;
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
@@ -19,8 +20,8 @@ export class ReservationComponent implements OnInit{
   reservate: boolean= false;
 
   constructor (private tipoHabitacionService: TipoHabitacionService, private reservaService: ReservaService, private datePipe: DatePipe) {
-    this.fechaInicio= this.datePipe.transform(new Date(), 'yyyy-MM-d');
-    this.fechaFinal=this.datePipe.transform(new Date(), 'yyyy-MM-d');
+    this.fechaInicio= this.datePipe.transform(new Date(), 'yyyy-MM-dd');
+    this.fechaFinal=this.datePipe.transform(new Date(), 'yyyy-MM-dd');
     this.tipoSeleccionado= "";
   }
 
@@ -44,7 +45,13 @@ export class ReservationComponent implements OnInit{
     this.reservaService.listarHabitacionReserva({fechaLlegada: fechaInicialforma, fechaSalida: fechaFinalforma,tipoHabitacion: tipoHabitacionTemp}).subscribe((data: Reserva) => {
       this.dataHabitacionReserva = data;
       console.log(data);
-      this.verReserva()
+      if(data.numero_habitacion==null){
+        $('#modal-noHabitacion').modal('show');
+        //jQuery('#modal-noHabitacion').modal('show'); 
+        var prueba = document.getElementById('#modal-noHabitacion');
+
+      }else{
+      this.verReserva()}
     });
   }
   }

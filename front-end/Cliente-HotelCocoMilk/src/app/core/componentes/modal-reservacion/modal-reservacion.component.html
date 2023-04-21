@@ -1,0 +1,63 @@
+<div class="modal fade" id="modal-confirmacion" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reserva en linea</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>¿Desea confirmar la compra?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn" data-toggle="modal" data-target="#modal-reservaRealizada">Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-reservaRealizada" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reserva en linea</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Reservación realizada! <br />
+                   Gracias Nombre! Su reservación fue realizada exitosamente.<br />
+                   Numero de reservación: numero <br /> 
+                   Acabamos de enviar esta información a  la dirección de Email para mayor facilidad. <br />
+                   Gracias por preferirnos!
+                </p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div><div class="modal fade" id="modal-noHabitacion" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reserva en linea</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Lo sentimos, no hay habitaciones disponibles en este rango de fechas</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn"  data-dismiss="modal" routerLink="/reservation">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
