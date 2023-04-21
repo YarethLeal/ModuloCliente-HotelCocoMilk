@@ -61,32 +61,33 @@
           <div class="reservacion mt-4">
             <div class="row">
                 <div class="col-md-12">
-                    <form id="request" class="main_form">
+                    <form id="request" class="main_form" (ngSubmit)="confirmacion()" #contactForm="ngForm">
                         <div class="row">
                           <div class="col-md-4">
                             <div class="col-md-12 ">
-                                <input class="formulario" [placeholder]="'Monto: ₡'+ this.dataHabitacionReserva.tarifa" type="type" name="Monto" disabled>
+                                <input class="formulario" [placeholder]="'Monto: ₡'+ this.dataHabitacionReserva.tarifa" type="text" name="Monto" disabled>
                             </div>
                             <div class="col-md-12 ">
-                                <input class="formulario" placeholder="Nombre" type="type" name="Nombre">
+                                <input [(ngModel)]="cliente.nombre" class="formulario" placeholder="Nombre" type="text" id="nombre" name="nombre" required>
                             </div>
                           </div>
                           <div class="col-md-4">
                             <div class="col-md-12">
-                              <input class="formulario" placeholder="Apellidos" type="type" name="Apellidos">
+                              <input [(ngModel)]="cliente.apellido" class="formulario" placeholder="Apellidos" type="text" id="Apellido" name="Apellidos" required>
                             </div>
                             <div class="col-md-12">
-                                <input class="formulario" placeholder="Email" type="type" name="Email">
+                                <input  [(ngModel)]="cliente.correo" class="formulario" placeholder="Email" type="text" name="Email" required>
                             </div>
                           </div>
                           <div class="col-md-4">
                               <div class="col-md-12">
-                                <input class="formulario" placeholder="Tarjeta de Credito" type="type"
-                                    name="Tarjeta de Credito">
+                                <input [(ngModel)]="cliente.tarjeta"  class="formulario" placeholder="Tarjeta de Credito" type="text"
+                                    name="Tarjeta de Credito" required>
                             </div>
                             <div class="col-md-12 btns">
-                                <button class="read_more" data-toggle="modal" data-target="#modal-confirmacion">Aceptar</button>
-                                <button class="read_more ml-1">Cancelar</button>
+                                <!-- <button class="read_more" data-toggle="modal" data-target="#modal-confirmacion">Aceptar</button> -->
+                                <button class="read_more" type="submit">Aceptar</button> 
+                                <button class="read_more cancel ml-1" routerLink="/reservation">Cancelar</button>
                             </div>
                           </div>
                         </div>

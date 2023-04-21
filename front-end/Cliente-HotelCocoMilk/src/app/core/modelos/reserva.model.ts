@@ -1,4 +1,4 @@
-export interface Reserva {
+export interface ReservacionDisponible {
     numero_habitacion: number;
     id_tipo_habitacion: number;
     tipo: string;
@@ -8,7 +8,7 @@ export interface Reserva {
   
   }
   
-  export class Reserva implements Reserva {
+  export class ReservacionDisponible implements ReservacionDisponible {
   
     constructor(public numero_habitacion: number) {
     };
