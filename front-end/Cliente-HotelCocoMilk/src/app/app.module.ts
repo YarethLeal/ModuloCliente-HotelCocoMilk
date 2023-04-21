@@ -18,6 +18,7 @@ import { FacilidadesComponent } from './paginas/facilidades/facilidades.componen
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DatePipe } from '@angular/common';
+import { ModalReservacionComponent } from './core/componentes/modal-reservacion/modal-reservacion.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DatePipe } from '@angular/common';
     MapComponent,
     TariffComponent,
     ReservationComponent,
-    FacilidadesComponent
+    FacilidadesComponent,
+    ModalReservacionComponent,
   ],
   imports: [
     BrowserModule,
