@@ -4,7 +4,7 @@ import { Observable, throwError, retry, catchError } from "rxjs";
 import { TipoHabitacion } from "../modelos/tipoHabitacion.model";
 import { Utils } from "../utilidades/util";
 import { environment } from "src/environments/environment";
-import { Reserva } from "../modelos/reserva.model";
+import { ReservacionDisponible } from "../modelos/reserva.model";
 
 @Injectable({
   providedIn: 'root'
@@ -35,8 +35,8 @@ export class ReservaService {
     withCredentials: false
   };
 
-  listarHabitacionReserva(data: any): Observable<Reserva> {
-    return this.http.post<Reserva>(this.urlAPI + 'listarHabitacionReserva', Utils.getFormData(data),this.httpOptions2);
+  listarHabitacionReserva(data: any): Observable<ReservacionDisponible> {
+    return this.http.post<ReservacionDisponible>(this.urlAPI + 'listarHabitacionReserva', Utils.getFormData(data),this.httpOptions2);
   }
 
 }

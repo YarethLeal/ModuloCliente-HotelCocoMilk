@@ -12,8 +12,32 @@
     border-radius: 30px;
 }
 
+
 .btn:hover {
-    background: #fe0000;
+    background: #1ddd7d;
     color: #fff;
     transition: ease-in all 0.5s;
 }
+.cancel:hover {
+  background: #fe0000;
+  color: #fff;
+  transition: ease-in all 0.5s;
+}
+
+ .formulario {
+    border: #fff solid 1px;
+    padding: 0 15px;
+    margin-bottom: 25px;
+    width: 100%;
+    height: 58px;
+    background: #fff;
+    color: gray;
+    font-size: 18px;
+    font-weight: normal;
+    box-shadow: 2px 0px 6px rgba(16, 11, 80, 0.2);
+  }
+  
+  #request *::placeholder {
+    color: gray;
+    opacity: 1;
+  }

@@ -39,9 +39,14 @@
 }
 
 .read_more:hover {
-    background: #fe0000;
+    background: #1ddd7d;
     color: #fff;
     transition: ease-in all 0.5s;
+}
+.cancel:hover {
+  background: #fe0000;
+  color: #fff;
+  transition: ease-in all 0.5s;
 }
 
 .main_form .formulario {
