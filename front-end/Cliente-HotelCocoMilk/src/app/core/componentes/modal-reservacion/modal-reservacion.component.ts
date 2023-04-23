@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Cliente } from 'src/app/core/modelos/cliente.model';
 import { NgForm } from '@angular/forms';
 
@@ -10,20 +10,22 @@ declare let $: any;
 })
 export class ModalReservacionComponent {
   tipoComponente: number = 0;
-  cliente: Cliente = new Cliente();
+  @Input() cliente: Cliente = new Cliente();
+
+  constructor() {
+    
+  }
+
   public registro(clienteParam: Cliente) {
     this.cliente = clienteParam;
-    console.log(this.cliente);
     if (this.cliente.nombre != undefined && this.cliente.nombre != null) {
-      //window.location.reload();
-      //$('#modal-confirmacion').modal('show');
-      $('#modal-confirmacion').on(function () {
-        location.reload();
-        $('#modal-confirmacion').modal('show');
-      });
+      $('#modal-confirmacion').modal('show');
       console.log(this.cliente);
     }
   }
 
+  error() {
+    $('#modal-noHabitacion').modal('show');
+  }
 
 }

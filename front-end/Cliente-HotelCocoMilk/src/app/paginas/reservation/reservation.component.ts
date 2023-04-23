@@ -49,7 +49,7 @@ export class ReservationComponent implements OnInit{
       this.dataHabitacionReserva = data;
       console.log(data);
       if(data.numero_habitacion==null){
-        $('#modal-noHabitacion').modal('show');
+        this.error();
       }else{
        this.verReserva()}
     });
@@ -62,5 +62,10 @@ export class ReservationComponent implements OnInit{
 
   confirmacion(){
     ModalReservacionComponent.prototype.registro(this.cliente);
+  }
+  error(){
+    // var reserva = new ModalReservacionComponent();
+    // reserva.error();
+    ModalReservacionComponent.prototype.error();
   }
 }

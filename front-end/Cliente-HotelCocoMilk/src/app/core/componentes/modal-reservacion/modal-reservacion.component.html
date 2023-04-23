@@ -1,20 +1,21 @@
-    <div class="modal fade" id="modal-confirmacion" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Reserva en linea</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                <form class="needs-validation"  id="request"  #contactForm="ngForm" novalidate>
+<div class="modal fade" id="modal-confirmacion" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reserva en linea</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" id="request" #contactForm="ngForm" novalidate>
                     <h4 class="mb-3">Payment</h4>
 
                     <div class="row ml-2 my-2">
                         <div class="custom-control custom-radio col-md-6">
-                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked
+                                required>
                             <label class="custom-control-label" for="credit">Tarjeta de credito</label>
                         </div>
                         <div class="custom-control custom-radio col-md-6">
@@ -24,32 +25,34 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                        <input  [(ngModel)]="cliente.nombre" type="text" class="form-control formulario" placeholder="Nombre Completo" id="nombre" name="nombre" value="{{cliente.nombre}}"  disabled>
-                        <p>{{this.cliente.nombre}} Holaaa</p>
-                        <div class="invalid-feedback">
-                        Nombre es requerido
+                            <input [(ngModel)]="cliente.nombre+' '+cliente.apellido" type="text" class="form-control formulario"
+                                placeholder="Nombre Completo" id="nombre" name="nombre"
+                                disabled>
+                            <div class="invalid-feedback">
+                                Nombre es requerido
+                            </div>
                         </div>
-                        </div>
-                        <div class="col-md-6">                       
+                        <div class="col-md-6">
                             <input type="text" class="form-control formulario" placeholder="Cedula" required>
                             <div class="invalid-feedback">
-                            Cedula es requerida 
+                                Cedula es requerida
                             </div>
-                        </div>                       
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="text" class="form-control formulario" placeholder="Numero Tarjeta"  required>
-                        <div class="invalid-feedback">
-                            Numero de tarjeta es requerido 
+                            <input [(ngModel)]="cliente.tarjeta" type="text" class="form-control formulario" placeholder="Numero Tarjeta" id="tarjeta" name="tarjeta" disabled>
+                            <div class="invalid-feedback">
+                                Numero de tarjeta es requerido
+                            </div>
                         </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control formulario" placeholder="Vencimiento 07/2023"
+                                required>
+                            <div class="invalid-feedback">
+                                Fecha de vencimiento es requerida
+                            </div>
                         </div>
-                        <div class="col-md-6">                     
-                        <input type="text" class="form-control formulario" placeholder="Vencimiento 07/2023" required>
-                        <div class="invalid-feedback">
-                            Fecha de vencimiento es requerida
-                        </div>
-                        </div>    
                     </div>
                     <div class="row">
                         <div class="col-md-3">
@@ -57,57 +60,61 @@
                             <div class="invalid-feedback">
                                 Codigo de seguridad requerido
                             </div>
-                        </div>                             
+                        </div>
                     </div>
-                    <p>¿Desea confirmar la compra?</p> 
-                </form>  
-                <div class="modal-footer">                
-                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-reservaRealizada">Continuar</button>
+                    <p>¿Desea confirmar la compra?</p>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-toggle="modal"
+                        data-target="#modal-reservaRealizada">Continuar</button>
                     <button type="button" class="btn cancel" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal-reservaRealizada" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Reserva en linea</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Reservación realizada! <br />
-                    Gracias Nombre! Su reservación fue realizada exitosamente.<br />
-                    Numero de reservación: numero <br /> 
-                    Acabamos de enviar esta información a  la dirección de Email para mayor facilidad. <br />
-                    Gracias por preferirnos!
-                    </p>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
-                </div>
+</div>
+<div class="modal fade" id="modal-reservaRealizada" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reserva en linea</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </div>
-    </div><div class="modal fade" id="modal-noHabitacion" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Reserva en linea</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Lo sentimos, no hay habitaciones disponibles en este rango de fechas</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn cancel"  data-dismiss="modal" routerLink="/reservation">Cancelar</button>
-                </div>
+            <div class="modal-body">
+                <p>Reservación realizada! <br />
+                    Gracias Nombre! Su reservación fue realizada exitosamente.<br />
+                    Numero de reservación: numero <br />
+                    Acabamos de enviar esta información a la dirección de Email para mayor facilidad. <br />
+                    Gracias por preferirnos!
+                </p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
+</div>
+<div class="modal fade" id="modal-noHabitacion" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reserva en linea</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Lo sentimos, no hay habitaciones disponibles en este rango de fechas</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancel" data-dismiss="modal"
+                    routerLink="/reservation">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
