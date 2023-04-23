@@ -1,105 +1,105 @@
 <div class="title">
-    <h2 style="color: white; padding-top: 5px;"> Reservación</h2>
- </div>
+  <h2 style="color: white; padding-top: 5px;"> Reservación</h2>
+</div>
 
- <div class="row row1">
-    <div class="col-md-3 combobox">
-      <div class="row">
-        <div class="col-md-12 combobox-item">
-          <label for="start">Fecha de llegada:</label>
-        </div>
-        <div class="col-md-12 combobox-item">
-          <input type="date" id="start" [(ngModel)]="fechaInicio" >
-        </div>
+<div class="row row1">
+  <div class="col-md-3 combobox">
+    <div class="row">
+      <div class="col-md-12 combobox-item">
+        <label for="start">Fecha de llegada:</label>
+      </div>
+      <div class="col-md-12 combobox-item">
+        <input type="date" id="start" [(ngModel)]="fechaInicio">
       </div>
     </div>
-    <div class="col-md-3 combobox">
-      <div class="row">
-        <div class="col-md-12 ">
-          <label for="end">Fecha de salida:</label>
-        </div>
-        <div class="col-md-12 ">
-          <input type="date" id="end" [(ngModel)]="fechaFinal" min="{{fechaInicio}}">
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 content mt-5">
-      <select [(ngModel)]="tipoSeleccionado">
-        <option disabled selected hidden value="">Tipo de Habitación</option>
-        <option *ngFor="let tipoHabitacion of dataTipoHabitacion">{{tipoHabitacion.tipo}}</option>
-    </select>
-    </div>
-    <div class="col-md-3 content">
-      <button class="read_more" type="button" (click)="listarHabitacionReserva(fechaInicio,fechaFinal,tipoSeleccionado)">Aceptar</button>
-    </div>
- </div>
- <div *ngIf="reservate == true">
-        <div class="row ml-1">
-          <div class="about">
-            <p class="ml-4">Habitacion Disponible: {{this.dataHabitacionReserva.tipo}}</p>
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="about_img">
-                        <figure><img  [src]="'assets/images/' + this.dataHabitacionReserva.imagen" alt="#" /></figure>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="titlepage">
-                        <p class="margin_0 descripcion">
-                          {{this.dataHabitacionReserva.informacion}}
-                        </p>
-                        <p class="margin_0 descripcion"> Numero de habitación:
-                          {{this.dataHabitacionReserva.numero_habitacion}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="reservacion mt-4">
-            <div class="row">
-                <div class="col-md-12">
-                    <form id="request" class="main_form" (ngSubmit)="confirmacion()" #contactForm="ngForm">
-                        <div class="row">
-                          <div class="col-md-4">
-                            <div class="col-md-12 ">
-                                <input class="formulario" [placeholder]="'Monto: ₡'+ this.dataHabitacionReserva.tarifa" type="text" name="Monto" disabled>
-                            </div>
-                            <div class="col-md-12 ">
-                                <input [(ngModel)]="cliente.nombre" class="formulario" placeholder="Nombre" type="text" id="nombre" name="nombre" required>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="col-md-12">
-                              <input [(ngModel)]="cliente.apellido" class="formulario" placeholder="Apellidos" type="text" id="Apellido" name="Apellidos" required>
-                            </div>
-                            <div class="col-md-12">
-                                <input  [(ngModel)]="cliente.correo" class="formulario" placeholder="Email" type="text" name="Email" required>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                              <div class="col-md-12">
-                                <input [(ngModel)]="cliente.tarjeta"  class="formulario" placeholder="Tarjeta de Credito" type="text"
-                                    name="Tarjeta de Credito" required>
-                            </div>
-                            <div class="col-md-12 btns">
-                                <!-- <button class="read_more" data-toggle="modal" data-target="#modal-confirmacion">Aceptar</button> -->
-                                <button class="read_more" type="submit">Aceptar</button> 
-                                <button class="read_more cancel ml-1" routerLink="/reservation">Cancelar</button>
-                            </div>
-                          </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-          </div>
-        </div>
   </div>
-  <app-modal-reservacion></app-modal-reservacion>
+  <div class="col-md-3 combobox">
+    <div class="row">
+      <div class="col-md-12 ">
+        <label for="end">Fecha de salida:</label>
+      </div>
+      <div class="col-md-12 ">
+        <input type="date" id="end" [(ngModel)]="fechaFinal" min="{{fechaInicio}}">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 content mt-5">
+    <select [(ngModel)]="tipoSeleccionado">
+      <option disabled selected hidden value="">Tipo de Habitación</option>
+      <option *ngFor="let tipoHabitacion of dataTipoHabitacion">{{tipoHabitacion.tipo}}</option>
+    </select>
+  </div>
+  <div class="col-md-3 content">
+    <button class="read_more" type="button"
+      (click)="listarHabitacionReserva(fechaInicio,fechaFinal,tipoSeleccionado)">Aceptar</button>
+  </div>
+</div>
+<div *ngIf="reservate == true">
+  <div class="row ml-1">
+    <div class="about">
+      <p class="ml-4">Habitacion Disponible: {{this.dataHabitacionReserva.tipo}}</p>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="about_img">
+            <figure><img [src]="'assets/images/' + this.dataHabitacionReserva.imagen" alt="#" /></figure>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="titlepage">
+            <p class="margin_0 descripcion">
+              {{this.dataHabitacionReserva.informacion}}
+            </p>
+            <p class="margin_0 descripcion"> Numero de habitación:
+              {{this.dataHabitacionReserva.numero_habitacion}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-
-
-
+  <div class="row">
+    <div class="reservacion mt-4">
+      <div class="row">
+        <div class="col-md-12">
+          <form id="request" class="main_form" (ngSubmit)="confirmacion()" #contactForm="ngForm">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="col-md-12 ">
+                  <input class="formulario" [placeholder]="'Monto: ₡'+ this.dataHabitacionReserva.tarifa" type="text"
+                    name="Monto" disabled>
+                </div>
+                <div class="col-md-12 ">
+                  <input [(ngModel)]="cliente.nombre" class="formulario" placeholder="Nombre" type="text" id="nombre"
+                    name="nombre" required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="col-md-12">
+                  <input [(ngModel)]="cliente.apellido" class="formulario" placeholder="Apellidos" type="text"
+                    id="Apellido" name="Apellidos" required>
+                </div>
+                <div class="col-md-12">
+                  <input [(ngModel)]="cliente.correo" class="formulario" placeholder="Email" type="text" name="Email"
+                    required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="col-md-12">
+                  <input [(ngModel)]="cliente.tarjeta" class="formulario" placeholder="Tarjeta de Credito" type="text"
+                    name="Tarjeta de Credito" required>
+                </div>
+                <div class="col-md-12 btns">
+                  <!-- <button class="read_more" data-toggle="modal" data-target="#modal-confirmacion">Aceptar</button> -->
+                  <button class="read_more" type="submit">Aceptar</button>
+                  <button class="read_more cancel ml-1" routerLink="/reservation">Cancelar</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-modal-reservacion [cliente]="cliente"></app-modal-reservacion>
