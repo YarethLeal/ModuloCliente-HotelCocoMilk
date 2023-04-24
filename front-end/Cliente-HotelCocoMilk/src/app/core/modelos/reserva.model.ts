@@ -1,18 +1,18 @@
-export interface ReservacionDisponible {
-    numero_habitacion: number;
-    id_tipo_habitacion: number;
-    tipo: string;
-    informacion: string;
-    imagen: string;
-    tarifa: number;
-  
-  }
-  
-  export class ReservacionDisponible implements ReservacionDisponible {
-  
-    constructor(public numero_habitacion: number) {
+
+export interface Reservacion {
+    id_reserva: number;
+    id_cliente: string;
+    id_habitacion: number;
+    fecha: Date;
+    fecha_entrada: Date;
+    fecha_salida: Date;
+    transaccion: number;
+}
+export class Reservacion implements Reservacion {
+
+    constructor() {
     };
-  
-  
-  }
-  
+
+
+}
+

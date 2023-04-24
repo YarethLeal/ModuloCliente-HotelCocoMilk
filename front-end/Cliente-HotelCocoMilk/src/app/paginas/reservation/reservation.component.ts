@@ -1,5 +1,5 @@
 
-import { DatePipe } from '@angular/common';
+import { DatePipe, formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TipoHabitacion } from 'src/app/core/modelos/tipoHabitacion.model';
 import { ReservaService } from 'src/app/core/servicios/reserva.service';
@@ -7,7 +7,8 @@ import { TipoHabitacionService } from 'src/app/core/servicios/tipoHabitacion.ser
 import { ModalReservacionComponent } from 'src/app/core/componentes/modal-reservacion/modal-reservacion.component';
 import { Cliente } from 'src/app/core/modelos/cliente.model';
 import { NgForm } from '@angular/forms';
-import { ReservacionDisponible } from 'src/app/core/modelos/reserva.model';
+import { ReservacionDisponible } from "src/app/core/modelos/reservaDisponible.model";
+import { Reservacion } from 'src/app/core/modelos/reserva.model';
 declare let $: any;
 
 @Component({
@@ -17,6 +18,7 @@ declare let $: any;
 })
 export class ReservationComponent implements OnInit{
   cliente : Cliente = new Cliente();
+  reserva: Reservacion = new Reservacion();
   public fechaInicio: string | null;
   public fechaFinal: string | null;
   public tipoSeleccionado: string;
@@ -51,7 +53,15 @@ export class ReservationComponent implements OnInit{
       if(data.numero_habitacion==null){
         this.error();
       }else{
-       this.verReserva()}
+        this.reserva.id_habitacion=data.numero_habitacion;
+        //this.reserva.fecha_entrada= new Date(formatDate(fechaLlegadaTemp, 'dd-MM-yyyy', "en_US"));
+        this.reserva.fecha_entrada = fechaLlegadaTemp;
+        console.log(this.reserva.fecha_entrada);
+        //this.reserva.fecha_salida= new Date(formatDate(fechaSalidaTemp, 'dd/MM/yyyy', "en_US"));
+        this.reserva.fecha_salida = fechaSalidaTemp;
+        //this.reserva.fecha = new Date(formatDate(new Date(), 'dd/MM/yyyy', "en_US"));
+        this.reserva.transaccion=  this.dataHabitacionReserva.tarifa;
+        this.verReserva()}
     });
   }
   }
@@ -61,11 +71,9 @@ export class ReservationComponent implements OnInit{
   }
 
   confirmacion(){
-    ModalReservacionComponent.prototype.registro(this.cliente);
+    ModalReservacionComponent.prototype.registro(this.cliente,this.reserva);
   }
   error(){
-    // var reserva = new ModalReservacionComponent();
-    // reserva.error();
     ModalReservacionComponent.prototype.error();
   }
 }
