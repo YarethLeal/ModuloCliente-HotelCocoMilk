@@ -70,14 +70,14 @@
                     name="Monto" disabled>
                 </div>
                 <div class="col-md-12 ">
-                  <input [(ngModel)]="cliente.nombre" class="formulario" placeholder="Nombre" type="text" id="nombre"
-                    name="nombre" required>
+                <input [(ngModel)]="cliente.tarjeta" class="formulario" placeholder="Tarjeta de Credito" type="text"
+                    name="Tarjeta de Credito" required>
                 </div>
               </div>
               <div class="col-md-4">
-                <div class="col-md-12">
-                  <input [(ngModel)]="cliente.apellido" class="formulario" placeholder="Apellidos" type="text"
-                    id="Apellido" name="Apellidos" required>
+                <div class="col-md-12 ">
+                  <input [(ngModel)]="cliente.nombre" class="formulario" placeholder="Nombre" type="text" id="nombre"
+                    name="nombre" required>
                 </div>
                 <div class="col-md-12">
                   <input [(ngModel)]="cliente.correo" class="formulario" placeholder="Email" type="text" name="Email"
@@ -86,8 +86,8 @@
               </div>
               <div class="col-md-4">
                 <div class="col-md-12">
-                  <input [(ngModel)]="cliente.tarjeta" class="formulario" placeholder="Tarjeta de Credito" type="text"
-                    name="Tarjeta de Credito" required>
+                  <input [(ngModel)]="cliente.apellido" class="formulario" placeholder="Apellidos" type="text"
+                    id="Apellido" name="Apellidos" required>
                 </div>
                 <div class="col-md-12 btns">
                   <!-- <button class="read_more" data-toggle="modal" data-target="#modal-confirmacion">Aceptar</button> -->
@@ -102,4 +102,4 @@
     </div>
   </div>
 </div>
-<app-modal-reservacion [cliente]="cliente"></app-modal-reservacion>
+<app-modal-reservacion [cliente]="cliente" [reserva]="reserva"></app-modal-reservacion>

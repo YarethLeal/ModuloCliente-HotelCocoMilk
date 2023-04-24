@@ -9,7 +9,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="needs-validation" id="request" #contactForm="ngForm" novalidate>
+                <form class="needs-validation" id="request" #contactForm="ngForm" (ngSubmit)="realizarReserva()"
+                    novalidate>
                     <h4 class="mb-3">Payment</h4>
 
                     <div class="row ml-2 my-2">
@@ -25,15 +26,16 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <input [(ngModel)]="cliente.nombre+' '+cliente.apellido" type="text" class="form-control formulario"
-                                placeholder="Nombre Completo" id="nombre" name="nombre"
+                            <input [(ngModel)]="cliente.nombre+' '+cliente.apellido" type="text"
+                                class="form-control formulario" placeholder="Nombre Completo" id="nombre" name="nombre"
                                 disabled>
                             <div class="invalid-feedback">
                                 Nombre es requerido
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control formulario" placeholder="Cedula" required>
+                            <input [(ngModel)]="cliente.id_cliente" type="text" class="form-control formulario"
+                                placeholder="Cedula" id="id_cliente" name="id_cliente" required>
                             <div class="invalid-feedback">
                                 Cedula es requerida
                             </div>
@@ -41,7 +43,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <input [(ngModel)]="cliente.tarjeta" type="text" class="form-control formulario" placeholder="Numero Tarjeta" id="tarjeta" name="tarjeta" disabled>
+                            <input [(ngModel)]="cliente.tarjeta" type="text" class="form-control formulario"
+                                placeholder="Numero Tarjeta" id="tarjeta" name="tarjeta" disabled>
                             <div class="invalid-feedback">
                                 Numero de tarjeta es requerido
                             </div>
@@ -63,12 +66,11 @@
                         </div>
                     </div>
                     <p>¿Desea confirmar la compra?</p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" type="submit">Continuar</button>
+                        <button type="button" class="btn cancel" data-dismiss="modal">Cancelar</button>
+                    </div>
                 </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn" data-toggle="modal"
-                        data-target="#modal-reservaRealizada">Continuar</button>
-                    <button type="button" class="btn cancel" data-dismiss="modal">Cancelar</button>
-                </div>
             </div>
         </div>
     </div>
@@ -85,9 +87,10 @@
             </div>
             <div class="modal-body">
                 <p>Reservación realizada! <br />
-                    Gracias Nombre! Su reservación fue realizada exitosamente.<br />
+                    Gracias {{cliente.nombre}} {{cliente.apellido}}! Su reservación fue realizada exitosamente.<br />
                     Numero de reservación: numero <br />
-                    Acabamos de enviar esta información a la dirección de Email para mayor facilidad. <br />
+                    Acabamos de enviar esta información a la dirección de {{cliente.correo}} para mayor facilidad.
+                    <br />
                     Gracias por preferirnos!
                 </p>
 
