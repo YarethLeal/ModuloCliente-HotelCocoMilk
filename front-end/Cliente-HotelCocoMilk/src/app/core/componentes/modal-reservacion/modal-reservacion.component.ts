@@ -35,6 +35,7 @@ export class ModalReservacionComponent {
         console.log(data);
         if(data=="Reserva Registrada"){
         $('#modal-reservaRealizada').modal('show');}
+        $('#modal-confirmacion').modal('hide');
       });
     });
   }

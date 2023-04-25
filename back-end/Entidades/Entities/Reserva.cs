@@ -9,8 +9,8 @@ namespace Entidades.Entities
         public string? id_cliente { get; set; }
         public int? id_habitacion { get; set; }
         public DateTime fecha { get; set; }
-        public DateTime? fecha_entrada { get; set; }
-        public DateTime? fecha_salida { get; set; }
+        public DateTime fecha_entrada { get; set; }
+        public DateTime fecha_salida { get; set; }
         public int? transaccion { get; set; }
         public bool? eliminado { get; set; }
     }
