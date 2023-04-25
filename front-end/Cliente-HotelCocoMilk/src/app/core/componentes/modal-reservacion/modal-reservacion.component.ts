@@ -34,8 +34,13 @@ export class ModalReservacionComponent {
       this.reservaService.registrarReserva(this.reserva).subscribe((data: string) => {
         console.log(data);
         if(data=="Reserva Registrada"){
-        $('#modal-reservaRealizada').modal('show');}
+        $('#modal-reservaRealizada').modal('show');
         $('#modal-confirmacion').modal('hide');
+      }else{
+        $('#modal-noHabitacion').modal('show');
+        $('#modal-confirmacion').modal('hide');
+      }
+
       });
     });
   }

@@ -9,8 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="needs-validation" id="request" #contactForm="ngForm" (ngSubmit)="realizarReserva()"
-                    novalidate>
+                <form ngNativeValidate class="needs-validation" id="request" #contactForm="ngForm" (ngSubmit)="realizarReserva()">
                     <h4 class="mb-3">Payment</h4>
 
                     <div class="row ml-2 my-2">
@@ -29,41 +28,26 @@
                             <input [(ngModel)]="cliente.nombre+' '+cliente.apellido" type="text"
                                 class="form-control formulario" placeholder="Nombre Completo" id="nombre" name="nombre"
                                 disabled>
-                            <div class="invalid-feedback">
-                                Nombre es requerido
-                            </div>
                         </div>
                         <div class="col-md-6">
                             <input [(ngModel)]="cliente.id_cliente" type="text" class="form-control formulario"
                                 placeholder="Cedula" id="id_cliente" name="id_cliente" required>
-                            <div class="invalid-feedback">
-                                Cedula es requerida
-                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <input [(ngModel)]="cliente.tarjeta" type="text" class="form-control formulario"
                                 placeholder="Numero Tarjeta" id="tarjeta" name="tarjeta" disabled>
-                            <div class="invalid-feedback">
-                                Numero de tarjeta es requerido
-                            </div>
-                        </div>
+                          </div>
                         <div class="col-md-6">
                             <input type="text" class="form-control formulario" placeholder="Vencimiento 07/2023"
                                 required>
-                            <div class="invalid-feedback">
-                                Fecha de vencimiento es requerida
-                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <input type="text" class="form-control formulario" placeholder="CVV" required>
-                            <div class="invalid-feedback">
-                                Codigo de seguridad requerido
-                            </div>
-                        </div>
+                            <input type="text" class="form-control formulario" name="cvv" placeholder="CVV" required>
+                         </div>
                     </div>
                     <p>¿Desea confirmar la compra?</p>
                     <div class="modal-footer">
@@ -88,7 +72,6 @@
             <div class="modal-body">
                 <p>Reservación realizada! <br />
                     Gracias {{cliente.nombre}} {{cliente.apellido}}! Su reservación fue realizada exitosamente.<br />
-                    Numero de reservación: numero <br />
                     Acabamos de enviar esta información a la dirección de {{cliente.correo}} para mayor facilidad.
                     <br />
                     Gracias por preferirnos!
