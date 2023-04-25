@@ -16,18 +16,19 @@ declare let $: any;
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.css']
 })
-export class ReservationComponent implements OnInit{
-  cliente : Cliente = new Cliente();
+export class ReservationComponent implements OnInit {
+  cliente: Cliente = new Cliente();
   reserva: Reservacion = new Reservacion();
   public fechaInicio: string | null;
   public fechaFinal: string | null;
   public tipoSeleccionado: string;
-  reservate: boolean= false;
+  reservate: boolean = false;
 
-  constructor (private tipoHabitacionService: TipoHabitacionService, private reservaService: ReservaService, private datePipe: DatePipe) {
-    this.fechaInicio= this.datePipe.transform(new Date(), 'yyyy-MM-dd');
-    this.fechaFinal=this.datePipe.transform(new Date(), 'yyyy-MM-dd');
-    this.tipoSeleccionado= "";
+  constructor(private tipoHabitacionService: TipoHabitacionService, private reservaService: ReservaService, private datePipe: DatePipe) {
+    this.fechaInicio = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
+    this.fechaFinal = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
+    this.tipoSeleccionado = "";
+    this.reserva.eliminado = false;
   }
 
   ngOnInit(): void {
@@ -43,37 +44,36 @@ export class ReservationComponent implements OnInit{
     });
   }
 
-  listarHabitacionReserva(fechaLlegadaTemp: any,fechaSalidaTemp: any,tipoHabitacionTemp: any){
-    const fechaInicialforma= this.datePipe.transform(fechaLlegadaTemp, 'dd/MM/yyyy');
-    const fechaFinalforma= this.datePipe.transform(fechaSalidaTemp, 'dd/MM/yyyy');
-    if(tipoHabitacionTemp!=""){
-    this.reservaService.listarHabitacionReserva({fechaLlegada: fechaInicialforma, fechaSalida: fechaFinalforma,tipoHabitacion: tipoHabitacionTemp}).subscribe((data: ReservacionDisponible) => {
-      this.dataHabitacionReserva = data;
-      console.log(data);
-      if(data.numero_habitacion==null){
-        this.error();
-      }else{
-        this.reserva.id_habitacion=data.numero_habitacion;
-        //this.reserva.fecha_entrada= new Date(formatDate(fechaLlegadaTemp, 'dd-MM-yyyy', "en_US"));
-        this.reserva.fecha_entrada = fechaLlegadaTemp;
-        console.log(this.reserva.fecha_entrada);
-        //this.reserva.fecha_salida= new Date(formatDate(fechaSalidaTemp, 'dd/MM/yyyy', "en_US"));
-        this.reserva.fecha_salida = fechaSalidaTemp;
-        //this.reserva.fecha = new Date(formatDate(new Date(), 'dd/MM/yyyy', "en_US"));
-        this.reserva.transaccion=  this.dataHabitacionReserva.tarifa;
-        this.verReserva()}
-    });
-  }
+  listarHabitacionReserva(fechaLlegadaTemp: any, fechaSalidaTemp: any, tipoHabitacionTemp: any) {
+    const fechaInicialforma = this.datePipe.transform(fechaLlegadaTemp, 'dd/MM/yyyy');
+    const fechaFinalforma = this.datePipe.transform(fechaSalidaTemp, 'dd/MM/yyyy');
+    if (tipoHabitacionTemp != "") {
+      this.reservaService.listarHabitacionReserva({ fechaLlegada: fechaInicialforma, fechaSalida: fechaFinalforma, tipoHabitacion: tipoHabitacionTemp }).subscribe((data: ReservacionDisponible) => {
+        this.dataHabitacionReserva = data;
+        console.log(data);
+        if (data.numero_habitacion == null) {
+          this.error();
+        } else {
+          this.reserva.id_habitacion = data.numero_habitacion;
+          this.reserva.fecha_entrada = this.datePipe.transform(fechaLlegadaTemp, 'yyyy-MM-dd');
+          console.log(this.reserva.fecha_entrada);
+          this.reserva.fecha_salida = this.datePipe.transform(fechaSalidaTemp, 'yyyy-MM-dd');
+          this.reserva.fecha = this.datePipe.transform(new Date(), 'yyyy-MM-dd')
+          this.reserva.transaccion = this.dataHabitacionReserva.tarifa;
+          this.verReserva()
+        }
+      });
+    }
   }
 
   verReserva() {
     return (this.reservate = true);
   }
 
-  confirmacion(){
-    ModalReservacionComponent.prototype.registro(this.cliente,this.reserva);
+  confirmacion() {
+    ModalReservacionComponent.prototype.registro(this.cliente, this.reserva);
   }
-  error(){
+  error() {
     ModalReservacionComponent.prototype.error();
   }
 }

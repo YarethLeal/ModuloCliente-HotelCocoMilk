@@ -1,18 +1,14 @@
-
 export interface Reservacion {
-    id_reserva: number;
     id_cliente: string;
     id_habitacion: number;
-    fecha: Date;
-    fecha_entrada: Date;
-    fecha_salida: Date;
+    fecha: any;
+    fecha_entrada: any;
+    fecha_salida: any;
     transaccion: number;
+    eliminado: boolean;
 }
 export class Reservacion implements Reservacion {
-
     constructor() {
     };
-
-
 }
 

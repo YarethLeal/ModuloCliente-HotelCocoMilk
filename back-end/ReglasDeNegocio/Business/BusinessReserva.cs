@@ -11,8 +11,12 @@ namespace ReglasDeNegocio.Business
         {
             dataReserva = new DataReserva();
         }
-        
-        public async Task<ReservacionDisponible> listarHabitacionReserva(DateTime fechaLlegada, DateTime fechaSalida, string tipoHabitacion)
+        public async Task<List<Reserva>> listarReserva()
+        {
+            return await dataReserva.listarReserva();
+        }
+
+            public async Task<ReservacionDisponible> listarHabitacionReserva(DateTime fechaLlegada, DateTime fechaSalida, string tipoHabitacion)
         {
             return await dataReserva.listarHabitacionReserva(fechaLlegada, fechaSalida, tipoHabitacion);
         }

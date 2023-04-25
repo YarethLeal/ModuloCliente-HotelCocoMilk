@@ -1,11 +1,20 @@
 ﻿using AccesoADatos.Context;
 using Entidades.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace AccesoADatos.Data
 {
     public class DataReserva
     {
+        public async Task<List<Reserva>> listarReserva()
+        {
+            using (var _context = new DBContext())
+            {
+                return await _context.reserva.ToListAsync();
+            }
+        }
+
         public async Task<ReservacionDisponible> listarHabitacionReserva(DateTime fechaLlegada, DateTime fechaSalida, string tipoHabitacion)
         {
             using (var _context = new DBContext())
@@ -57,20 +66,37 @@ namespace AccesoADatos.Data
         }
 
         public async Task<String> registarReserva(Reserva reserva)
-        {
+        { var reservaBD = new Reserva();
             try
             {
                 using (var _context = new DBContext())
                 {
-                    _context.reserva.Add(reserva);
+                                       
+                    reservaBD.id_cliente = reserva.id_cliente;
+                    reservaBD.id_habitacion = reserva.id_habitacion;
+                    reservaBD.fecha_entrada = new DateTime(reserva.fecha_entrada.Year,
+                        reserva.fecha_entrada.Month, reserva.fecha_entrada.Day,
+                        reserva.fecha_entrada.Hour, reserva.fecha_entrada.Minute, 
+                        reserva.fecha_entrada.Second, DateTimeKind.Utc);
+                    reservaBD.fecha_salida = new DateTime(reserva.fecha_salida.Year,
+                        reserva.fecha_salida.Month, reserva.fecha_salida.Day, 
+                        reserva.fecha_salida.Hour, reserva.fecha_salida.Minute,
+                        reserva.fecha_salida.Second, DateTimeKind.Utc);
+                    reservaBD.fecha= new DateTime(reserva.fecha.Year,
+                        reserva.fecha.Month, reserva.fecha.Day,
+                        reserva.fecha.Hour, reserva.fecha.Minute,
+                        reserva.fecha.Second, DateTimeKind.Utc);
+                    reservaBD.transaccion = reserva.transaccion;
+                    reservaBD.eliminado = reserva.eliminado;
+                    _context.reserva.Add(reservaBD);
                     await _context.SaveChangesAsync();
 
                 }
             }
-            catch (DbUpdateException /* ex */)
+            catch (DbUpdateException  ex )
             {
 
-                return "No se pueden guardar los cambios. " +
+                return "No se puede realizar la reserva" +
                          "Vuelve a intentarlo y, si el problema persiste, " +
                          "consulte con el administrador del sistema.";
             }

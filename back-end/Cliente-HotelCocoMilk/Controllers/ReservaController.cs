@@ -14,6 +14,13 @@ namespace Cliente_HotelCocoMilk.Controllers
             Configuration = configuration;
         }
 
+        [HttpGet]
+        [Route("listarReserva")]
+        public async Task<List<Reserva>> listarReseva()
+        {
+            return await (new BusinessReserva().listarReserva());
+        }
+
         [HttpPost]
         [Route("listarHabitacionReserva")]
         public async Task<ReservacionDisponible> listarHabitacionReserva(DateTime fechaLlegada, DateTime fechaSalida, string tipoHabitacion)
