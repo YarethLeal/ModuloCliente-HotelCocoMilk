@@ -40,13 +40,20 @@ export class ModalReservacionComponent {
         $('#modal-noHabitacion').modal('show');
         $('#modal-confirmacion').modal('hide');
       }
-
+      this.limpiar();
       });
     });
   }
 
   error() {
     $('#modal-noHabitacion').modal('show');
+  }
+
+  limpiar(){
+    this.cliente.nombre = "";
+    this.cliente.apellido = "";
+    this.cliente.correo = "";
+    this.cliente.tarjeta = "";
   }
 
 }
