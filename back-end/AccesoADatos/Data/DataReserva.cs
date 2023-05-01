@@ -118,6 +118,25 @@ namespace AccesoADatos.Data
                     } // Fin if
                 } // Fin if
 
+                // Aplicar descuento de temporadas si en necesario
+                if(reservaDisponible != null)
+                {
+                    List<Temporadas> listaTemporadas = _context.temporadas.Where(h => h.id_tipo_habitacion == tipo_habitacion.id_tipo_habitacion).OrderBy(x => x.id_temporada).ToList();
+                    
+                    for (int x = 0; x < listaTemporadas.Count(); x++)
+                    {
+                        if (fechaLlegada >= listaTemporadas[x].fecha_inicio && fechaSalida <= listaTemporadas[x].fecha_final) 
+                        {
+                            double descuentoPorcentaje = listaTemporadas[x].oferta / 100.00;
+                            int descuento = (int)(descuentoPorcentaje * reservaDisponible.tarifa);
+
+                            reservaDisponible.tarifa = reservaDisponible.tarifa - descuento;  // Aplicar descuento
+                            x = listaTemporadas.Count() - 1;
+                            break;
+                        }
+                    }
+                }
+
                 return await Task.FromResult(reservaDisponible);
             }
         }
