@@ -1,6 +1,7 @@
 ﻿using AccesoADatos.Context;
 using Entidades.Entities;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Globalization;
 using System.Net.Mail;
 
@@ -94,7 +95,7 @@ namespace AccesoADatos.Data
                     await _context.SaveChangesAsync();
 
 
-                    Cliente cliente = _context.cliente.Where(tp => tp.id_cliente == reserva.id_cliente).First();
+                   /* Cliente cliente = _context.cliente.Where(tp => tp.id_cliente == reserva.id_cliente).First();
                     SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com");
                     smtpClient.Port = 587;
                     smtpClient.Credentials = new System.Net.NetworkCredential("hotelCocoMilk@outlook.com", "cocomilk2023IF7100");
@@ -111,7 +112,7 @@ namespace AccesoADatos.Data
                         "\r\n\r\n ¡Esperamos verle pronto!";
 
                     
-                    smtpClient.Send(message);
+                    smtpClient.Send(message);*/
 
                 }
             }
@@ -125,5 +126,44 @@ namespace AccesoADatos.Data
             return "Reserva Registrada";
 
         }
-    }//class
+
+        public async Task<String> envioCorreo(Cliente cliente)
+        {
+            try
+            {
+                SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com");
+                smtpClient.Port = 587;
+                smtpClient.Credentials = new System.Net.NetworkCredential("hotelCocoMilk@outlook.com", "cocomilk2023IF7100");
+                smtpClient.EnableSsl = true;
+
+
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress("hotelCocoMilk@outlook.com");
+                message.To.Add(cliente.correo);
+                message.Subject = "Confirmación de reservación";
+                message.Body = "Estimado/a " + cliente.nombre + " " + cliente.apellido + ", \r\n\r\n" +
+                    "Le agradecemos por elegir nuestro servicio. Este mensaje es para confirmar su reserva, la cual hemos recibido y procesado.  " +
+                    "Si necesitas hacer cambios o requieres asistencia por favor no dudes en contactarnos. " +
+                    "\r\n\r\n ¡Esperamos verle pronto!";
+
+
+                smtpClient.Send(message);
+            }
+            catch (SmtpException ex)
+            {
+                return "No se pudo enviar el correo de confirmación. " +
+                       "Vuelve a intentarlo y, si el problema persiste, " +
+                       "consulte con el administrador del sistema.";
+            }
+            catch (FormatException ex)
+            {
+                return "Error de formato en el correo electrónico. " +
+                       "Vuelve a intentarlo y, si el problema persiste, " +
+                       "consulte con el administrador del sistema.";
+            }
+            return "Correo Enviado";
+        }
+
+
+        }//class
 }

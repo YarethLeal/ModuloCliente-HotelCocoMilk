@@ -11,10 +11,12 @@ declare let $: any;
   styleUrls: ['./modal-reservacion.component.css']
 })
 export class ModalReservacionComponent {
+  public textoCorreo: string;
   tipoComponente: number = 0;
   @Input() cliente: Cliente = new Cliente();
   @Input() reserva: Reservacion = new Reservacion();
   constructor(private reservaService: ReservaService) {
+    this.textoCorreo = "";
   }
 
   registro(clienteParam: Cliente, reservaParam: Reservacion) {
@@ -34,8 +36,17 @@ export class ModalReservacionComponent {
       this.reservaService.registrarReserva(this.reserva).subscribe((data: string) => {
         console.log(data);
         if(data=="Reserva Registrada"){
+            this.reservaService.envioCorreo(this.cliente).subscribe((data: string) => {
+              console.log(data);
+              if(data!="Correo Enviado"){
+                this.textoCorreo = "";
+              }else{
+                this.textoCorreo = "Acabamos de enviar esta información a la dirección de "+ this.cliente.correo + " para mayor facilidad.";
+              }
+            });
         $('#modal-reservaRealizada').modal('show');
         $('#modal-confirmacion').modal('hide');
+
       }else{
         $('#modal-noHabitacion').modal('show');
         $('#modal-confirmacion').modal('hide');
@@ -43,6 +54,7 @@ export class ModalReservacionComponent {
 
       });
     });
+
   }
 
   error() {

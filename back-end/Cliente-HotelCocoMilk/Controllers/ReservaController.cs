@@ -34,5 +34,12 @@ namespace Cliente_HotelCocoMilk.Controllers
         {
             return await (new BusinessReserva().registarReserva(reserva));
         }
-     }
+
+        [HttpPost]
+        [Route("envioCorreo")]
+        public async Task<String> envioCorreo(Cliente cliente)
+        {
+            return await (new BusinessReserva().envioCorreo(cliente));
+        }
+    }
 }
