@@ -46,4 +46,7 @@ export class ReservaService {
   registrarCliente(data: any): Observable<any> {
     return this.http.post(this.urlAPI + 'registarCliente', Utils.getFormData(data),this.httpOptions1);
   }
+  envioCorreo(data: any): Observable<any> {
+    return this.http.post(this.urlAPI + 'envioCorreo', Utils.getFormData(data),this.httpOptions1);
+  }
 }

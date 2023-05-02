@@ -25,5 +25,10 @@ namespace ReglasDeNegocio.Business
         {
             return await dataReserva.registarReserva(reserva);
         }
+
+        public async Task<String> envioCorreo(Cliente cliente)
+        {
+            return await dataReserva.envioCorreo(cliente);
+        }
     }
 }
