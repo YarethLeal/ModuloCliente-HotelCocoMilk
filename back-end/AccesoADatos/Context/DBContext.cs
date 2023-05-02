@@ -16,6 +16,7 @@ namespace AccesoADatos.Context
         public virtual DbSet<Habitacion> habitacion { get; set; }
         public virtual DbSet<TipoHabitacion> tipo_habitacion { get; set; }
         public virtual DbSet<Reserva> reserva { get; set; }
+        public virtual DbSet<Temporadas> temporadas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

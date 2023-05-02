@@ -34,36 +34,111 @@ namespace AccesoADatos.Data
                 ReservacionDisponible reservaDisponible = new ReservacionDisponible();
                 var _encontrado = false;
 
-                for (int x = 0; x < listaHabitaciones.Count(); x++)
+                for (int i = 0; i < listaReservas.Count(); i++)
                 {
-                    for (int i = 0; i < listaReservas.Count(); i++)
+                    for (int x = 0; x < listaHabitaciones.Count(); x++)
                     {
-                        if (listaHabitaciones[x].numero_id == listaReservas[i].id_habitacion)
+                        // Si el número de habitación se encuentra en la lista de reservas entonces se debe validar la disponibilidad
+                        if (listaHabitaciones[x].numero_id == listaReservas[i].id_habitacion)   //05/04/23 - 08/05/23 -> FE: 05/04/23 - FS: 09/04/23
                         {
-                            if (((listaReservas[i].fecha_entrada < fechaLlegada && listaReservas[i].fecha_entrada < fechaSalida)  // La fecha de llegada es antes de la fecha de llegada y salida de dicha habitación reservada y
+                            if((fechaLlegada >= listaReservas[i].fecha_entrada && fechaLlegada <= listaReservas[i].fecha_salida)
+                                || (fechaSalida >= listaReservas[i].fecha_entrada && fechaSalida <= listaReservas[i].fecha_salida))  // Habitacion ocupada
+                            {
+                                _encontrado = false;
+
+                                reservaDisponible.numero_habitacion = null;
+                                reservaDisponible.id_tipo_habitacion = null;
+                                reservaDisponible.tipo = null;
+                                reservaDisponible.informacion = null;
+                                reservaDisponible.imagen = null;
+                                reservaDisponible.tarifa = null;
+
+                            } else if (((listaReservas[i].fecha_entrada < fechaLlegada && listaReservas[i].fecha_entrada < fechaSalida)  // La fecha de llegada es antes de la fecha de llegada y salida de dicha habitación reservada y
                                 && (listaReservas[i].fecha_salida < fechaLlegada && listaReservas[i].fecha_salida < fechaSalida)) // la fecha de salida es antes de la fecha de llegada y salida de dicha habitación reservada, por lo tanto, está disponible.
                                 || ((listaReservas[i].fecha_entrada > fechaLlegada && listaReservas[i].fecha_entrada > fechaSalida) // La fecha de llegada es después de la fecha de llegada y salida de dicha habitación reservada y
                                 && (listaReservas[i].fecha_salida > fechaLlegada && listaReservas[i].fecha_salida > fechaSalida)))  // la fecha de salida es antes de la fecha de llegada y salida de dicha habitación reservada, por lo tanto, está disponible.
                             {
-                                reservaDisponible.numero_habitacion = listaReservas[i].id_habitacion;
+                                _encontrado = true;
+
+                                reservaDisponible.numero_habitacion = listaHabitaciones[x].numero_id;
                                 reservaDisponible.id_tipo_habitacion = tipo_habitacion.id_tipo_habitacion;
                                 reservaDisponible.tipo = tipo_habitacion.tipo;
                                 reservaDisponible.informacion = tipo_habitacion.informacion;
                                 reservaDisponible.imagen = tipo_habitacion.imagen;
                                 reservaDisponible.tarifa = tipo_habitacion.tarifa;
 
-                                _encontrado = true;
-                                break;
                             }
                         }
                     } // Fin for
-
-                    if (_encontrado == true)
-                        break;
                 } // Fin for
 
-                return await Task.FromResult(reservaDisponible);
+                if (_encontrado == false)   // La habitación no se ha reservado nunca
+                {
+                    if (listaReservas.Count() == 0) // En caso de que la lista de reservas esté vacía
+                    {
+                        reservaDisponible.numero_habitacion = listaHabitaciones[0].numero_id;
+                        reservaDisponible.id_tipo_habitacion = tipo_habitacion.id_tipo_habitacion;
+                        reservaDisponible.tipo = tipo_habitacion.tipo;
+                        reservaDisponible.informacion = tipo_habitacion.informacion;
+                        reservaDisponible.imagen = tipo_habitacion.imagen;
+                        reservaDisponible.tarifa = tipo_habitacion.tarifa;
+                        
+                    }
+                    else  // En caso de que la lista de reservas no esté vacía
+                    {
+                        for (int x = 0; x < listaHabitaciones.Count(); x++)
+                        {
+                            for (int i = 0; i < listaReservas.Count(); i++)
+                            {
+                                _encontrado = false;
 
+                                // Si el número de habitación se encuentra en la lista de reservas entonces no es la que se busca
+                                if (listaHabitaciones[x].numero_id == listaReservas[i].id_habitacion)
+                                {
+                                    _encontrado = true;
+                                    i = listaReservas.Count() - 1;
+                                }
+
+                                // Si es la última reserva de la lista y no se ha encontrado el número de habitación, entonces es la que nunca se ha reservado
+                                if (i == listaReservas.Count() - 1 && _encontrado == false)
+                                {
+                                    reservaDisponible.numero_habitacion = listaHabitaciones[x].numero_id;
+                                    reservaDisponible.id_tipo_habitacion = tipo_habitacion.id_tipo_habitacion;
+                                    reservaDisponible.tipo = tipo_habitacion.tipo;
+                                    reservaDisponible.informacion = tipo_habitacion.informacion;
+                                    reservaDisponible.imagen = tipo_habitacion.imagen;
+                                    reservaDisponible.tarifa = tipo_habitacion.tarifa;
+                                    break;
+                                }
+                            } // Fin for
+
+                            if (_encontrado == false)
+                                break;
+
+                        } // Fin for
+                    } // Fin if
+                } // Fin if
+
+                // Aplicar descuento de temporadas si en necesario
+                if(reservaDisponible != null)
+                {
+                    List<Temporadas> listaTemporadas = _context.temporadas.Where(h => h.id_tipo_habitacion == tipo_habitacion.id_tipo_habitacion).OrderBy(x => x.id_temporada).ToList();
+                    
+                    for (int x = 0; x < listaTemporadas.Count(); x++)
+                    {
+                        if (fechaLlegada >= listaTemporadas[x].fecha_inicio && fechaSalida <= listaTemporadas[x].fecha_final) 
+                        {
+                            double descuentoPorcentaje = listaTemporadas[x].oferta / 100.00;
+                            int descuento = (int)(descuentoPorcentaje * reservaDisponible.tarifa);
+
+                            reservaDisponible.tarifa = reservaDisponible.tarifa - descuento;  // Aplicar descuento
+                            x = listaTemporadas.Count() - 1;
+                            break;
+                        }
+                    }
+                }
+
+                return await Task.FromResult(reservaDisponible);
             }
         }
 
@@ -116,7 +191,7 @@ namespace AccesoADatos.Data
 
                 }
             }
-            catch (DbUpdateException  ex )
+            catch (DbUpdateException)
             {
 
                 return "No se puede realizar la reserva" +

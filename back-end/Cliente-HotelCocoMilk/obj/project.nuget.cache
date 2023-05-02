@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s0wojNJBN1Ekkjrs6UxqAwrMkLsviumMHDbUTR3k1zKWTCSIu72c1BtY7un2h/W/sMWL2U4npB9lOByn14gpnw==",
+  "dgSpecHash": "mKyHJhJ8TkH5YlsQpacmSgDfM9ivscq5gZYPDarrG00z1065JFyX++C3nRxWuYKnM/bSmRslBfD9DUwQagx7Cw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\REPOSITORIOS\\ModuloCliente-HotelCocoMilk\\back-end\\Cliente-HotelCocoMilk\\Cliente-HotelCocoMilk.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\ModuloCliente-HotelCocoMilk\\back-end\\Cliente-HotelCocoMilk\\Cliente-HotelCocoMilk.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\google.protobuf\\3.21.5\\google.protobuf.3.21.5.nupkg.sha512",

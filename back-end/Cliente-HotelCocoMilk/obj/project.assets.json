@@ -5657,11 +5657,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\REPOSITORIOS\\ModuloCliente-HotelCocoMilk\\back-end\\Cliente-HotelCocoMilk\\Cliente-HotelCocoMilk.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\ModuloCliente-HotelCocoMilk\\back-end\\Cliente-HotelCocoMilk\\Cliente-HotelCocoMilk.csproj",
       "projectName": "Cliente-HotelCocoMilk",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\REPOSITORIOS\\ModuloCliente-HotelCocoMilk\\back-end\\Cliente-HotelCocoMilk\\Cliente-HotelCocoMilk.csproj",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\ModuloCliente-HotelCocoMilk\\back-end\\Cliente-HotelCocoMilk\\Cliente-HotelCocoMilk.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\REPOSITORIOS\\ModuloCliente-HotelCocoMilk\\back-end\\Cliente-HotelCocoMilk\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\ModuloCliente-HotelCocoMilk\\back-end\\Cliente-HotelCocoMilk\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5678,11 +5678,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Usuario\\Desktop\\REPOSITORIOS\\ModuloCliente-HotelCocoMilk\\back-end\\Entidades\\Entidades.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Desktop\\REPOSITORIOS\\ModuloCliente-HotelCocoMilk\\back-end\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Usuario\\Desktop\\ModuloCliente-HotelCocoMilk\\back-end\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\ModuloCliente-HotelCocoMilk\\back-end\\Entidades\\Entidades.csproj"
             },
-            "C:\\Users\\Usuario\\Desktop\\REPOSITORIOS\\ModuloCliente-HotelCocoMilk\\back-end\\ReglasDeNegocio\\ReglasDeNegocio.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Desktop\\REPOSITORIOS\\ModuloCliente-HotelCocoMilk\\back-end\\ReglasDeNegocio\\ReglasDeNegocio.csproj"
+            "C:\\Users\\Usuario\\Desktop\\ModuloCliente-HotelCocoMilk\\back-end\\ReglasDeNegocio\\ReglasDeNegocio.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\ModuloCliente-HotelCocoMilk\\back-end\\ReglasDeNegocio\\ReglasDeNegocio.csproj"
             }
           }
         }
@@ -5741,7 +5741,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

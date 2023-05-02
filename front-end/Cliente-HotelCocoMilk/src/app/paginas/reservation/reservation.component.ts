@@ -72,8 +72,11 @@ export class ReservationComponent implements OnInit {
 
   confirmacion() {
     ModalReservacionComponent.prototype.registro(this.cliente, this.reserva);
+    
   }
   error() {
     ModalReservacionComponent.prototype.error();
   }
+
+  
 }
