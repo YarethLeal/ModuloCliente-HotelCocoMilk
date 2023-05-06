@@ -45,7 +45,7 @@ namespace AccesoADatos.Data
                                 || (fechaSalida >= listaReservas[i].fecha_entrada && fechaSalida <= listaReservas[i].fecha_salida))  // Habitacion ocupada
                             {
                                 _encontrado = false;
-
+                                Console.Write("Nop \n");
                                 reservaDisponible.numero_habitacion = null;
                                 reservaDisponible.id_tipo_habitacion = null;
                                 reservaDisponible.tipo = null;
@@ -60,6 +60,7 @@ namespace AccesoADatos.Data
                             {
                                 _encontrado = true;
 
+                                Console.Write("Sip \n");
                                 reservaDisponible.numero_habitacion = listaHabitaciones[x].numero_id;
                                 reservaDisponible.id_tipo_habitacion = tipo_habitacion.id_tipo_habitacion;
                                 reservaDisponible.tipo = tipo_habitacion.tipo;
