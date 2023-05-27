@@ -4,3 +4,24 @@
     padding-bottom: 0.1rem; 
     width: 100%;
 }
+
+.contacto {
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.socialMedia button {
+    padding: 1rem; 
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.socialMedia button {
+    border-width: 0;
+}
+
+p {
+    font-weight: 500;
+    margin-left: 1.5rem;
+}

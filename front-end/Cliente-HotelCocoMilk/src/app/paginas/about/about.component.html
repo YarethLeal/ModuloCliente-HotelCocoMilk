@@ -7,13 +7,12 @@
     </section>
 </div>
 <div class="row ml-0 mr-2">
-    <div class="col-md-4">
+    <div class="col-md-5">
         <div class="about_img">
-            <!-- <figure><img [src]="'assets/images/' + this.imagen" alt="#" /></figure> -->
             <figure><img src="assets/images/{{this.imagenPrincipal}}" alt="#" /></figure>
         </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-7">
         <div class="row row-cols-md-3">
             <div class="col" *ngFor="let image of galeria; let i = index">
                 <figure class="galeria" (click)="open(image)"><img [src]="'assets/images/'+image" alt="#" /></figure>

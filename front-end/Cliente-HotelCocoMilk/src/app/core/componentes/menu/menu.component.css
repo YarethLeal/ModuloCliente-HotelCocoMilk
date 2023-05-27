@@ -1,6 +1,6 @@
 .hero__categories {
 	padding-bottom: 0.1rem; 
-	padding-left: 2rem;
+	/*padding-left: 2rem;*/
 	width: 100%;
 }
 
@@ -28,6 +28,11 @@
 
 .sidebar .nav-item .nav-link:hover{
 	color: rgb(9, 48, 244);
+}
+
+a {
+	font-weight: 500;
+	font-size: medium;
 }
  
 /* @media (max-width: 767.98px) {
