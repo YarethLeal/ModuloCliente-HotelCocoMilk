@@ -32,7 +32,7 @@ export class TariffComponent implements OnInit{
     this.tipoMoneda=false;
    // dataTipoHabitacion=[];
   }
-  
+
 
   ngOnInit(): void {
     this.listarTipoHabitacion();
@@ -44,7 +44,9 @@ export class TariffComponent implements OnInit{
   listarTipoHabitacion() {
     this.tipoHabitacionService.listarTipoHabitacion().subscribe((data: TipoHabitacion[]) => {
       this.dataTipoHabitacion = data;
-      
+      this.dataTipoHabitacion.forEach((element: any)=>{
+        element.imagen ='data:image/jpg;base64,' + element.imagen;
+      });
      /* this.informacion=data[0].informacion;
       this.imagen=data[0].imagen;*/
     });
@@ -54,7 +56,7 @@ obtenerTipoDeCambioXML(){
   this.tipoHabitacionService.obtenerTipoDeCambioXML().subscribe((respuesta: any) => {
     //this.dialogoNotificacion(respuesta);
     console.log();
-    
+
 
     if(this.tipoMoneda==true && this.cambio==true){
       for (let i = 0; i < this.dataTipoHabitacion.length; i++) {

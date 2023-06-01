@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, throwError, retry, catchError } from "rxjs";
 import { Pagina } from "../modelos/pagina.model";
 import { Utils } from "../utilidades/util";
+import { environment } from "src/environments/environment";
 
 
 @Injectable({
@@ -11,7 +12,7 @@ import { Utils } from "../utilidades/util";
 
 export class PaginaService {
 
-  urlAPI: string = "https://localhost:7071/";
+  urlAPI: string = environment.urlAPI;
   constructor(private http: HttpClient) {
     console.log('Servicio HTTP');
   }
