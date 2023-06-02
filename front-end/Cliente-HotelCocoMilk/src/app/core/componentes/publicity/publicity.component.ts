@@ -25,6 +25,9 @@ export class PublicityComponent implements OnInit {
   getPublicidad() {
     return this.publicidadService.getPublicidad().subscribe((data: Publicidad[]) => {
       this.slides = data;
+      this.slides.forEach((element: any)=>{
+        element.imagen ='data:image/jpg;base64,' + element.imagen;
+      });
       console.log(this.slides);
     })
   };
