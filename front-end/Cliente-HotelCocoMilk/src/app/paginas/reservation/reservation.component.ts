@@ -50,13 +50,14 @@ export class ReservationComponent implements OnInit {
     if (tipoHabitacionTemp != "") {
       this.reservaService.listarHabitacionReserva({ fechaLlegada: fechaInicialforma, fechaSalida: fechaFinalforma, tipoHabitacion: tipoHabitacionTemp }).subscribe((data: ReservacionDisponible) => {
         this.dataHabitacionReserva = data;
-        console.log(data);
+        this.dataHabitacionReserva.imagen = 'data:image/jpg;base64,' +  this.dataHabitacionReserva.imagen;
+        //console.log(data);
         if (data.numero_habitacion == null) {
           this.error();
         } else {
           this.reserva.id_habitacion = data.numero_habitacion;
           this.reserva.fecha_entrada = this.datePipe.transform(fechaLlegadaTemp, 'yyyy-MM-dd');
-          console.log(this.reserva.fecha_entrada);
+          //console.log(this.reserva.fecha_entrada);
           this.reserva.fecha_salida = this.datePipe.transform(fechaSalidaTemp, 'yyyy-MM-dd');
           this.reserva.fecha = this.datePipe.transform(new Date(), 'yyyy-MM-dd')
           this.reserva.transaccion = this.dataHabitacionReserva.tarifa;
