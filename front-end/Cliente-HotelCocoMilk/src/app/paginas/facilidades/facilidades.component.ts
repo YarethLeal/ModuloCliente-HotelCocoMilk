@@ -22,7 +22,7 @@ export class FacilidadesComponent implements OnInit{
     this.paginaService.mostrarPagina({ tipoPagina: buscar }).subscribe((data: Pagina[]) => {
       this.dataPaginas = data;
       this.dataPaginas.forEach((element: any)=>{
-        element.imagen = 'data:image/jpg;base64,' + element.imagen;
+        element.imagen ='data:image/jpg;base64,' + element.imagen;
       });
     });
 }

@@ -16,10 +16,10 @@ export class PublicityComponent implements OnInit {
   constructor(private publicidadService: PublicidadService) {
     this.slides=[];
       }
+
   ngOnInit(): void {
     this.getPublicidad();
     this.currentSlide = 0;
-    this.loop(this.slides.length);
   }
 
   getPublicidad() {
@@ -28,7 +28,7 @@ export class PublicityComponent implements OnInit {
       this.slides.forEach((element: any)=>{
         element.imagen ='data:image/jpg;base64,' + element.imagen;
       });
-      console.log(this.slides);
+     this.loop(this.slides.length);
     })
   };
 
