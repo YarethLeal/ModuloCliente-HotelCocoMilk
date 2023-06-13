@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit{
     dataPaginas =[];
 
   }
-  
+
 
   ngOnInit(): void {
     this.mostrarPagina("Home");
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit{
       this.paginaService.mostrarPagina({ tipoPagina: buscar }).subscribe((data: Pagina[]) => {
         dataPaginas = data;
         this.descripcion=data[0].descripcion;
-        this.imagen=data[0].imagen;
+        this.imagen='data:image/jpg;base64,'+data[0].imagen;
       });
   }
 
