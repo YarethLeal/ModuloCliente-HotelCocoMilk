@@ -115,6 +115,10 @@
   text-align: center;
 }
 
+.span{
+  text-align: left;
+}
+
 .btns {
 display: inline-flex;
 }

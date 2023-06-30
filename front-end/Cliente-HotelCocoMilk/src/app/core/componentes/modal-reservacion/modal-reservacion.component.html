@@ -31,8 +31,11 @@
                         </div>
                         <div class="col-md-6">
                             <input [(ngModel)]="cliente.id_cliente" type="text" class="form-control formulario"
-                                placeholder="Cédula" id="id_cliente" name="id_cliente" required>
-                        </div>
+                                placeholder="Cédula" id="id_cliente" name="id_cliente" type="text" pattern="[0-9]{7,9}" maxlength="9"  [popover]="popoverMessage" popoverTrigger="mouseenter" placement="top" [outsideClick]="true" required>
+                                <ng-template #popoverMessage>
+                                    <div class="alert alert-info">La cedula debe contener entre 7 y 9 dígitos numéricos.</div>
+                                  </ng-template>
+                            </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -46,7 +49,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <input type="text" class="form-control formulario" name="cvv" placeholder="CVV" required>
+                            <input type="number" min="100" max="1000" class="form-control formulario" name="cvv" placeholder="CVV" required>
                          </div>
                     </div>
                     <p>¿Desea confirmar la compra?</p>

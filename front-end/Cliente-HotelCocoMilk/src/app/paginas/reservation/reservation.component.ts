@@ -80,4 +80,14 @@ export class ReservationComponent implements OnInit {
   }
 
   
+
+  hideMessageFlag: boolean = true;
+
+  showMessage() {
+    this.hideMessageFlag = false;
+  }
+
+  hideMessage() {
+    this.hideMessageFlag = true;
+  }
 }

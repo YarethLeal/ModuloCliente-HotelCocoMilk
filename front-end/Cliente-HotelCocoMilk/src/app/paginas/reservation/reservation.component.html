@@ -70,9 +70,12 @@
                     name="Monto" disabled>
                 </div>
                 <div class="col-md-12 ">
-                <input [(ngModel)]="cliente.tarjeta" class="formulario" placeholder="Tarjeta de Credito" type="text"
+                <input [(ngModel)]="cliente.tarjeta" class="formulario" placeholder="Tarjeta de Credito" type="text" pattern="[0-9]{13,16}" maxlength="16" id="myInput" [popover]="popoverMessage" popoverTrigger="mouseenter" placement="bottom" [outsideClick]="true"
                     name="Tarjeta de Credito" required>
-                </div>
+                    <ng-template #popoverMessage>
+                      <div class="alert alert-info">El número de tarjeta de crédito debe contener entre 13 y 16 dígitos numéricos.</div>
+                    </ng-template>
+                  </div>
               </div>
               <div class="col-md-4">
                 <div class="col-md-12 ">
@@ -80,7 +83,7 @@
                     name="nombre" required>
                 </div>
                 <div class="col-md-12">
-                  <input [(ngModel)]="cliente.correo" class="formulario" placeholder="Email" type="text" name="Email"
+                  <input [(ngModel)]="cliente.correo" class="formulario" placeholder="Email" type="email" name="Email"
                     required>
                 </div>
               </div>
