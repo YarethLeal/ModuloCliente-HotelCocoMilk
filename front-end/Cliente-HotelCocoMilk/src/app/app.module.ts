@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { ModalReservacionComponent } from './core/componentes/modal-reservacion/modal-reservacion.component';
+import { PopoverModule } from 'ngx-bootstrap/popover';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ModalReservacionComponent } from './core/componentes/modal-reservacion/
     ModalReservacionComponent,
   ],
   imports: [
+    PopoverModule.forRoot(),
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

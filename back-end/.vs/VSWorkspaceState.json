@@ -2,12 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\AccesoADatos",
+    "\\AccesoADatos\\Connected Services",
+    "\\AccesoADatos\\Connected Services\\ServiceReference1",
     "\\AccesoADatos\\Data",
     "\\Cliente-HotelCocoMilk",
     "\\Cliente-HotelCocoMilk\\Controllers",
     "\\Entidades",
     "\\Entidades\\Entities"
   ],
-  "SelectedNode": "\\AccesoADatos\\Data\\DataReserva.cs",
+  "SelectedNode": "\\AccesoADatos\\Connected Services\\ServiceReference1\\ConnectedService.json",
   "PreviewInSolutionExplorer": false
 }
